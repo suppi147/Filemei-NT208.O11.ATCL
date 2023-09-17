@@ -10,13 +10,14 @@ pipeline{
                 sh 'java --version'
             }
         }
-        stage('Pushing image'){
-            steps {
-                withDockerRegistry(credentialsId: 'dockerhub', url: '') {
-                    sh 'docker build -t suppi147/filemei .'
-                    sh 'docker push suppi147/filemei'
-                }
-            }
+        stage('Build image') {
+       dockerImage = docker.build("suppi147/filemei:latest")
         }
+    
+        stage('Push image') {
+                withDockerRegistry([ credentialsId: "dockerhub", url: "" ]) {
+                dockerImage.push()
+            }
+         }
     }
 }
