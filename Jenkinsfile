@@ -13,13 +13,17 @@ pipeline{
         }
         stage('Build image') {
             steps{
-                dockerImage = docker.build("suppi147/filemei:latest")
+                script {
+                    dockerImage = docker.build("suppi147/filemei:latest")
+                }
             }
         }
         stage('Push image') {
             steps{
-                withDockerRegistry([ credentialsId: "dockerhub", url: "" ]) {
-                dockerImage.push()
+                script{
+                    withDockerRegistry([ credentialsId: "dockerhub", url: "" ]) {
+                        dockerImage.push()
+                    }
                 }
             }
         }
