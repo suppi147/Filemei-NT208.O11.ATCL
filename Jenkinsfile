@@ -6,9 +6,10 @@ pipeline{
     stages{
         stage('Build with Maven') {
             steps {
+                def workspace = pwd()
                 sh 'mvn --version'
                 sh 'java --version'
-                sh 'cd Filemei/demo;mvn clean package;cp ../target/demo.war ../'
+                sh 'cd Filemei/demo;mvn clean package;cp ${workspace}/target/demo.war ${workspace}'
             }
         }
         stage('Build image') {
