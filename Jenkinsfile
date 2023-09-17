@@ -10,7 +10,7 @@ pipeline{
                     def workspace = pwd()
                     sh 'mvn --version'
                     sh 'java --version'
-                    sh 'cd Filemei/demo;mvn clean package;cp ${workspace}/target/demo.war ${workspace}'
+                    sh 'cd Filemei/demo;mvn clean package;cp ${workspace}/target/demo.war ${workspace}; cd ${workspace}; pwd;'
                 }
                 
             }
