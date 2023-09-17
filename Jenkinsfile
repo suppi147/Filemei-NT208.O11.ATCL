@@ -8,7 +8,7 @@ pipeline{
             steps {
                 sh 'mvn --version'
                 sh 'java --version'
-                sh 'cd Filemei/demo;mvn clean package;cp /var/jenkins_home/workspace/filemei_setup-environment/Filemei/demo/target/demo.war /var/jenkins_home/workspace/filemei_setup-environment/Filemei;ls -la'
+                sh 'cd Filemei/demo;mvn clean package;cp /var/jenkins_home/workspace/filemei_setup-environment/Filemei/demo/target/demo.war /var/jenkins_home/workspace/filemei_setup-environment'
             }
         }
         stage('Build image') {
