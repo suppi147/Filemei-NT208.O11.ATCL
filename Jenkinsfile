@@ -9,8 +9,7 @@ pipeline{
                 sh 'mvn --version'
                 sh 'java --version'
                 sh 'ls -la'
-                sh 'cd Filemei'
-                sh 'cd demo'
+                sh 'cd Filemei/demo'
                 sh 'mvn clean package'
             }
         }
