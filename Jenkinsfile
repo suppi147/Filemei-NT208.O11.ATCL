@@ -8,14 +8,15 @@ pipeline{
             steps {
                 sh 'mvn --version'
                 sh 'java --version'
-                sh 'ls -la'
-                sh 'cd Filemei/demo;mvn clean package;pwd'
+                sh 'cd Filemei/demo;mvn clean package'
             }
         }
         stage('Build image') {
             steps{
-                script {
-                    dockerImage = docker.build("suppi147/filemei:latest")
+                dir('/Filemei/demo/target/'){
+                    script {
+                        dockerImage = docker.build("suppi147/filemei:latest")
+                    }
                 }
             }
         }
