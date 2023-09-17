@@ -8,8 +8,7 @@ pipeline{
             steps {
                 sh 'mvn --version'
                 sh 'java --version'
-                sh 'docker pull tomcat'
-                sh 'cd Filemei/demo;mvn clean package'
+                sh 'cd Filemei/demo;mvn clean package;cp demo.war /var/jenkins_home/workspace/filemei_setup-environment/Filemei'
             }
         }
         stage('Build image') {
