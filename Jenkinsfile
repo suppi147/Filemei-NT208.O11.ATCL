@@ -13,10 +13,8 @@ pipeline{
         }
         stage('Build image') {
             steps{
-                dir('/Filemei/demo/target/'){
-                    script {
-                        dockerImage = docker.build("suppi147/filemei:latest")
-                    }
+                script {
+                    dockerImage = docker.build("suppi147/filemei:latest")
                 }
             }
         }
