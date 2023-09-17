@@ -8,6 +8,7 @@ pipeline{
             steps {
                 sh 'mvn --version'
                 sh 'java --version'
+                sh 'mvn clean package'
             }
         }
         stage('Build image') {
