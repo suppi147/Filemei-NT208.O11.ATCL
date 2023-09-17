@@ -12,11 +12,15 @@ pipeline{
             }
         }
         stage('Build image') {
-            dockerImage = docker.build("suppi147/filemei:latest")
+            steps{
+                dockerImage = docker.build("suppi147/filemei:latest")
+            }
         }
         stage('Push image') {
+            steps{
                 withDockerRegistry([ credentialsId: "dockerhub", url: "" ]) {
                 dockerImage.push()
+                }
             }
         }
     }
