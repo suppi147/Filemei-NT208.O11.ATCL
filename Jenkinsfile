@@ -10,7 +10,9 @@ pipeline{
                 sh 'java --version'
                 sh 'ls -la'
                 sh 'cd Filemei/demo'
+                sh 'ls -la'
                 sh 'mvn clean package'
+                sh 'ls -la'
             }
         }
         stage('Build image') {
