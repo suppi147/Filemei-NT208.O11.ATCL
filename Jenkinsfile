@@ -13,5 +13,13 @@ pipeline{
             sh 'java --version'
             }
         }
+        stage('Pushing image'){
+            steps {
+                withDockerRegistry(credentialsId: 'dockerhub', url: 'https://index.docker.io/v1/') {
+                    sh 'docker build -t suppi147/filemei .'
+                    sh 'docker push suppi147/filemei'
+                }
+            }
+        }
     }
 }
