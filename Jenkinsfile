@@ -8,6 +8,7 @@ pipeline{
             steps {
                 sh 'mvn --version'
                 sh 'java --version'
+                sh 'docker pull tomcat'
                 sh 'cd Filemei/demo;mvn clean package'
             }
         }
