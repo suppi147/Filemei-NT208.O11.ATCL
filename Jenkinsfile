@@ -30,8 +30,10 @@ pipeline{
         stage('Deploy demo to DEV') {
             steps {
                 echo 'Deploying and cleaning'
+                sh 'docker stop filemei || echo "this container does not exist" '
+                sh 'docker rm filemei'
                 sh 'docker pull suppi147/filemei:latest'
-                sh 'docker run --name filemei -p 8081:8082 suppi147/filemei:latest'
+                sh 'docker run --name filemei -d -p 8081:8082 suppi147/filemei:latest'
             }
         }
     }
