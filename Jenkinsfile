@@ -31,7 +31,7 @@ pipeline{
             steps {
                 echo 'Deploying and cleaning'
                 sh 'docker pull suppi147/filemei:latest'
-                sh 'docker run --name suppi147/filemei -p 8081:8082 suppi147/filemei:latest'
+                sh 'docker run --name filemei -p 8081:8082 suppi147/filemei:latest'
             }
         }
     }
