@@ -30,8 +30,8 @@ pipeline{
         stage('Deploy demo to DEV') {
             steps {
                 echo 'Deploying and cleaning'
-                sh 'docker image pull suppi147/filemei'
-                sh 'docker run --name suppi147/filemei -p 8081:8082 filemei:latest'
+                sh 'docker pull suppi147/filemei:latest'
+                sh 'docker run --name suppi147/filemei -p 8081:8082 suppi147/filemei:latest'
             }
         }
     }
