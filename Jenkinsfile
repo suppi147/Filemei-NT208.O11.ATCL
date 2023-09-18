@@ -27,14 +27,5 @@ pipeline{
                 }
             }
         }
-        stage('Deploy demo to DEV') {
-            steps {
-                echo 'Deploying and cleaning'
-                sh 'docker stop filemei || echo "this container does not exist" '
-                sh 'docker rm filemei'
-                sh 'docker image pull suppi147/filemei:latest'
-                sh 'docker run --name filemei -d -p 50000:50001 suppi147/filemei:latest'
-            }
-        }
     }
 }
