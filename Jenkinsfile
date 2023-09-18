@@ -27,5 +27,14 @@ pipeline{
                 }
             }
         }
+        stage('Deploy demo') {
+            steps {
+                echo 'Deploying and cleaning'
+                sh 'docker stop filemei || echo "this container does not exist" '
+                sh 'docker rm filemei'
+                sh 'docker pull suppi147/filemei:latest'
+                sh 'docker run --name filemei -d -p 8082:8080 suppi147/filemei:latest'
+            }
+        }
     }
 }
