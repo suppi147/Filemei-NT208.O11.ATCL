@@ -42,7 +42,7 @@
   </div>
 </div>
 <footer>
-  <p style="color:#eae7e7;">Copyright <a href="https://www.facebook.com/khoi.lee.2090/" style="color:#eae7e7;">gerstavoww</a> | All right reserved</p>
+  <p style="color:#eae7e7;">Copyright by <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" style="color:#eae7e7;">Group 7</a> | All right reserved</p>
 </footer>
 </body>
 </html>
