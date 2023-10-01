@@ -9,7 +9,6 @@
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="/filemei/assets/style.css" rel="stylesheet" />
-    <script src="/filemei/assets/script.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
@@ -19,10 +18,20 @@
 </head>
 
 <body>
+<div class="headline">
+  <div class="headline-right">
+    <h1>filemei</h1>
+  </div>
+  <div class="headline-left">
+    <a title="About" href="/about">About</a>
+    <a>|</a>
+    <a title="login" href="/login">Login</a>
+    <a title="signup" href="/signup">Signup</a>
+  </div>
+</div>
 <div class="wrapper">
   <div class="container">
     <a href="#" style="text-decoration: none;">
-      <h1>filemei</h1>
     </a>
     <p>Upload as many files as you like up to <strong>1 GB</strong> and get a link to share&#128230;</p>
     <div class="upload-container">
