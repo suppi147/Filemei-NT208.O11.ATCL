@@ -1,12 +1,13 @@
   body {
     font-family: 'Montserrat', sans-serif;
     background: #2590EB;
+    font-size: medium;
   }
   
   .wrapper {
     margin: auto;
     max-width: 640px;
-    padding-top: 100px;
+    padding-top: 140px;
     text-align: center;
   }
   
@@ -16,14 +17,10 @@
     border-radius: 10px;
   }
   
-  
-  h1 {
+  .container h2{
     color: #0b4397;
-    font-family: 'Bungee', cursive;
-    letter-spacing: -.5px;
-    font-weight: 700;
   }
-  p{
+  .container p{
     color: #0b214d;
   }
   .upload-container {
@@ -34,7 +31,6 @@
   
   .border-container {
     border: 5px dashed rgba(10, 10, 10, 0.65);
-    padding: 20px;
   }
   
   .border-container p {
@@ -60,7 +56,6 @@
     color:#fff;
     text-align: center;
     font-family: 'Bungee', cursive;
-  
   }
   
   .button-two:hover{
@@ -77,25 +72,41 @@
     margin-top: 13px;
   
   }
+  
+  .button-three {
+    padding:10px 40px;
+    background-color: #2590EB;
+    border-radius: 10px;
+  }
+  .button-three:hover{
+    padding:10px 40px;
+    background-color: #0b4397;
+    border-radius: 10px;
+  }
+  
+  .button-four {
+    padding:10px 40px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    color: #2590EB;
+  }
+  .button-four:hover{
+    padding:10px 40px;
+    background-color: #95a5a6;
+    border-radius: 10px;
+    color: #2590EB;
+  }
+  
 
   input[type=file] {
-    width: 350px;
+    width: 100%;
     max-width: 100%;
-    color: #444;
-    padding: 5px;
-    background: #fff;
-    border-radius: 10px;
-    border: 1px solid #555;
+    padding: 25px;
+    text-align: center;
+    color: #0b214d;
   }
   input[type=file]::file-selector-button {
-    margin-right: 20px;
-    border: none;
-    background: #084cdf;
-    padding: 10px 20px;
-    border-radius: 10px;
-    color: #fff;
-    cursor: pointer;
-    transition: background .2s ease-in-out;
+    display: none;
   }
 
   footer {
@@ -110,21 +121,35 @@
  .headline{
   width: 100%;
   position: fixed;
-  padding: 15px;
-  background-color: #f9f9f9;
+  background-color: #0a84ee;
   display: flex;
  }
+ 
  .headline-left{
   text-align: right;
-  float: right;
   width: 50%; 
  }
- .headline-right{
-  text-align: left;
-  width: 50%; 
- }
- .headline a{
+
+ .headline .headline-left a{
   font-size: 20px;
-  padding-right: 25px;
+  padding-right: 10px;
   color: #08090b;
  }
+
+ .headline-right{
+  text-align: left;
+  width: 50%;
+  
+ }
+ .headline .headline-right h1 {
+  color: #0b4397;
+  font-family: 'Bungee', cursive;
+  letter-spacing: -.5px;
+  font-weight: 900;
+  height: 100%;
+  font-size: 55px;
+  padding-left: 20px;
+}
+.headline .headline-right a{
+  text-decoration: none;
+}

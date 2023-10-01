@@ -20,28 +20,21 @@
 <body>
 <div class="headline">
   <div class="headline-right">
-    <h1>filemei</h1>
+    <a href="#"><h1>filemei</h1></a>
   </div>
   <div class="headline-left">
-    <a title="About" href="/about">About</a>
-    <a>|</a>
-    <a title="login" href="/login">Login</a>
-    <a title="signup" href="/signup">Signup</a>
+    <a title="login" href="/login"><button class="button-three">Login</button></a>
+    <a title="signup" href="/signup"><button class="button-four">Sign Up</button></a>
   </div>
 </div>
 <div class="wrapper">
   <div class="container">
     <a href="#" style="text-decoration: none;">
+      <h2>Super simple file sharing!</h2>
     </a>
     <p>Upload as many files as you like up to <strong>1 GB</strong> and get a link to share&#128230;</p>
     <div class="upload-container">
-      <div class="border-container">
-        <div class="icons fa-4x">
-          <i class="fas fa-file-image" data-fa-transform="shrink-3 down-2 left-6 rotate--45"></i>
-          <i class="fas fa-file-alt" data-fa-transform="shrink-2 up-4"></i>
-          <i class="fas fa-file-pdf" data-fa-transform="shrink-3 down-2 right-6 rotate-45"></i>
-        </div>
-          
+      <div class="border-container">          
           <form id="FilemeiUpload" action="/upload" method="post" enctype="multipart/form-data" class="hidden">
             <input type="file" name="fileToUpload" id="fileToUpload" multiple>
           </form>
@@ -51,7 +44,7 @@
   </div>
 </div>
 <footer>
-  <p style="color:#eae7e7;">Copyright by <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" style="color:#eae7e7;">Group 7</a> | All right reserved</p>
+  <p style="color:#eae7e7;">Copyright by <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0" style="color:#eae7e7;">Group 7</a> | All right reserved</p>
 </footer>
 </body>
 </html>
