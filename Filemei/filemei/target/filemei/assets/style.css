@@ -3,7 +3,84 @@
     background: #2590EB;
     font-size: medium;
   }
-  
+  .headline {
+  width: 100%;
+  position: absolute;
+  background-color: #0a84ee;
+  display: flex;
+  flex-wrap: wrap; /* Để các phần tử con có thể xuống dòng nếu không đủ chỗ */
+}
+
+.headline-left {
+  text-align: right;
+  width: 50%;
+  display: flex;
+  justify-content: flex-end; /* Đẩy phần nút sang bên phải */
+  position: relative; /* Thêm một vị trí tương đối để sử dụng vị trí tuyệt đối cho nút */
+}
+
+.headline-left .button-right {
+  position: absolute;
+  right: 10px; /* Thay đổi khoảng cách nút bên phải so với lề phải */
+  top: 8px;
+}
+
+.headline-left .button-left {
+  position: absolute;
+  right: 180px; /* Thay đổi khoảng cách nút bên trái so với lề phải */
+  top: 8px;
+}
+
+.headline .headline-left a {
+  font-size: 20px;
+  padding-right: 10px;
+  color: #08090b;
+}
+
+.headline-right {
+  text-align: left;
+  width: 50%;
+}
+
+/* Sử dụng media query để điều chỉnh CSS dựa trên kích thước màn hình */
+@media (max-width: 768px) {
+  .headline-left {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .headline-left .button-right,
+  .headline-left .button-left {
+    position: static; /* Hủy bỏ vị trí tuyệt đối để nút nằm giữa */
+    margin-top: 8.6px;
+    margin-right: 10px;
+  }
+
+  .headline-right {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+   .headline .headline-right h1 {
+    color: #0b4397;
+    font-family: 'Bungee', cursive;
+    letter-spacing: -.5px;
+    font-weight: 900;
+    height: 100%;
+    font-size: 55px;
+    padding-left: 20px;
+  }
+  .headline .headline-right a{
+    text-decoration: none;
+  }
+  @media (max-width: 768px) {
+    .headline .headline-right h1 {
+      font-size: 46px; /* Điều chỉnh kích thước cho màn hình nhỏ hơn */
+    }
+  }  
+
   .wrapper {
     margin: auto;
     max-width: 640px;
@@ -108,48 +185,3 @@
   input[type=file]::file-selector-button {
     display: none;
   }
-
-  footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 10px;
-    text-align: left;
-  }
-
- .headline{
-  width: 100%;
-  position: fixed;
-  background-color: #0a84ee;
-  display: flex;
- }
- 
- .headline-left{
-  text-align: right;
-  width: 50%; 
- }
-
- .headline .headline-left a{
-  font-size: 20px;
-  padding-right: 10px;
-  color: #08090b;
- }
-
- .headline-right{
-  text-align: left;
-  width: 50%;
-  
- }
- .headline .headline-right h1 {
-  color: #0b4397;
-  font-family: 'Bungee', cursive;
-  letter-spacing: -.5px;
-  font-weight: 900;
-  height: 100%;
-  font-size: 55px;
-  padding-left: 20px;
-}
-.headline .headline-right a{
-  text-decoration: none;
-}
