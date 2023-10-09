@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <display-name>filemei</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>FilemeiUpload</display-name>
+    <servlet-name>FilemeiUpload</servlet-name>
+    <servlet-class>FileInteraction.FilemeiUpload</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FilemeiUpload</servlet-name>
+    <url-pattern>/FilemeiUpload</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>FilemeiDownload</display-name>
+    <servlet-name>FilemeiDownload</servlet-name>
+    <servlet-class>FileInteraction.FilemeiDownload</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FilemeiDownload</servlet-name>
+    <url-pattern>/FilemeiDownload</url-pattern>
+  </servlet-mapping>
+</web-app>

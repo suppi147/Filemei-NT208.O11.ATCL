@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+  <display-name>My Web Application</display-name>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  <error-page>
+    <error-code>404</error-code>
+    <location>/SomethingGoesWrong/404/index.jsp</location>
+    </error-page>
+  <error-page>
+    <error-code>400</error-code>
+    <location>/SomethingGoesWrong/400/index.jsp</location>
+    </error-page>
+  <servlet>
+    <description></description>
+    <display-name>FilemeiDownload</display-name>
+    <servlet-name>FilemeiDownload</servlet-name>
+    <servlet-class>filemei.FilemeiDownload</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FilemeiDownload</servlet-name>
+    <url-pattern>/FilemeiDownload</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <description></description>
+    <display-name>FilemeiUpload</display-name>
+    <servlet-name>FilemeiUpload</servlet-name>
+    <servlet-class>filemei.FilemeiUpload</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FilemeiUpload</servlet-name>
+    <url-pattern>/FilemeiUpload</url-pattern>
+  </servlet-mapping>
+</web-app>
