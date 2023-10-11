@@ -8,9 +8,9 @@ import javax.servlet.annotation.*;
 
 @WebServlet(name = "FilemeiUpload", urlPatterns = { "/FilemeiUpload" })
 @MultipartConfig(
-  fileSizeThreshold = 1024 * 1024 * 1, // 1 MB
-  maxFileSize = 1024 * 1024 * 10,      // 10 MB
-  maxRequestSize = 1024 * 1024 * 100   // 100 MB
+  fileSizeThreshold = 1024 * 1024 * 1000, // 1 GB
+  maxFileSize = 1024 * 1024 * 1000,      // 1GB
+  maxRequestSize = 1024 * 1024 * 1000   // 1GB
 )
 
 /**
@@ -30,9 +30,9 @@ public class FilemeiUpload extends HttpServlet {
 				fileName = new File(fileName).getName();
 				if(!fileName.isEmpty()){
 					part.write(this.getFolderUpload().getAbsolutePath() + File.separator + fileName);
-					response.getWriter().print("upload success.");
+					//response.getWriter().print("upload success.");
 					request.setAttribute("filename", fileName);
-					getServletContext().getRequestDispatcher("/download.jsp").forward(request, response);
+					//getServletContext().getRequestDispatcher("/download.jsp").forward(request, response);
 				}
 			  }
 		} catch (Exception e) {

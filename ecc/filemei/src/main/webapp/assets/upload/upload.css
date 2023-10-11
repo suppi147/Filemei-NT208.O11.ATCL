@@ -27,7 +27,7 @@
 
 .headline-left .button-left {
   position: absolute;
-  right: 180px; /* Thay đổi khoảng cách nút bên trái so với lề phải */
+  right: 170px; /* Thay đổi khoảng cách nút bên trái so với lề phải */
   top: 8px;
 }
 
@@ -151,24 +151,24 @@
   }
   
   .button-three {
-    padding:10px 40px;
+    padding:15px 45px;
     background-color: #2590EB;
     border-radius: 10px;
   }
   .button-three:hover{
-    padding:10px 40px;
+    padding:15px 45px;
     background-color: #0b4397;
     border-radius: 10px;
   }
   
   .button-four {
-    padding:10px 40px;
+    padding:15px 45px;
     background-color: #ffffff;
     border-radius: 10px;
     color: #2590EB;
   }
   .button-four:hover{
-    padding:10px 40px;
+    padding:15px 45px;
     background-color: #95a5a6;
     border-radius: 10px;
     color: #2590EB;
