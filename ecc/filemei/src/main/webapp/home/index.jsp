@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html"%>
-    <!DOCTYPE html>
-    <html lang="en">
+  <!DOCTYPE html>
+  <html lang="en">
   <head>
     <meta charset="utf-8">
 
@@ -49,7 +49,8 @@
     <div class="w3-light-grey" style="visibility:hidden;">
   			<div id="myBar" class="w3-container w3-blue w3-round-xlarge" style="width:0%;">0%</div>
 	  </div>
-    <button id="submit" class="button-two" type="submit" onclick="uploadBar2()">Upload</button>
+    <button id="submit" class="button-two" type="submit" onclick="uploadBar2();emptyAlertdanger();">Upload</button>
+    
   </div>
 </div>
 </body>

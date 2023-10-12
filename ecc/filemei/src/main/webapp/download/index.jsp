@@ -18,28 +18,38 @@
 </head>
 
 <body>
+<div class="headline">
+  <div class="headline-right">
+    <a href="http://localhost:8080/filemei/home/"><h1>filemei</h1></a>
+  </div>
+  <div class="headline-left">
+    <div class="button-right">
+      <button class="button-login" onclick="linkTrigger('/filemei/login')">Login</button>
+    </div>
+    <div class="button-left">
+      <button class="button-four" onclick="linkTrigger('/filemei/signup')">Sign Up</button>
+    </div>
+  </div>
+</div>
 <div class="wrapper">
   <div class="container">
-    <a href="http://localhost:8080/filemei-1.0/home/" style="text-decoration: none;">
-      <h1>filemei</h1>
+    <a href="http://localhost:8080/filemei/home/" style="text-decoration: none;">
+      <h2>Super simple file sharing!</h2>
     </a>
-    <p>The link will be timeout in <strong>5 minutes</strong> so take your time&#9203;</p>
+    <p>You can share this link with your friends, so they can download it too&#9989;</p>
     <div>
        <!-- The text field -->
        <div class="copy-text">    
-        <input disabled="disabled" type="text" class="textbox" value="http://localhost:8080/filemei-1.0/download?filename=${requestScope.filename}" id="myInput">
+        <input disabled="disabled" type="text" class="textbox" value="http://localhost:8080/filemei/FilemeiDownload?filename=${requestScope.filename}" id="myInput">
         <button onclick="copy()" ><i class="fa fa-clone" ></i></button>
       </div>
     </div>
-    <form id="FilemeiDownload" action="http://localhost:8080/filemei-1.0/download" method="get">
+    <form id="FilemeiDownload" action="FilemeiDownload?filename=${requestScope.filename}" method="get">
       <input type="hidden" name="filename" value="${requestScope.filename}" >
       <button class="button-three" type="submit" form="FilemeiDownload" >Download</button>
     </form>
     
   </div>
 </div>
-<footer>
-    <p style="color:#eae7e7;">Copyright <a href="https://github.com/suppi147/" style="color:#eae7e7;">suppi147</a> | All right reserved</p>
-</footer>
 </body>
 </html>

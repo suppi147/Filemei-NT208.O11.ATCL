@@ -4,6 +4,85 @@
     -webkit-box-sizing: border-box;
   }
   
+  .headline {
+  width: 100%;
+  position: absolute;
+  background-color: #0a84ee;
+  display: flex;
+  flex-wrap: wrap; /* Để các phần tử con có thể xuống dòng nếu không đủ chỗ */
+}
+
+.headline-left {
+  text-align: right;
+  width: 50%;
+  display: flex;
+  justify-content: flex-end; /* Đẩy phần nút sang bên phải */
+  position: relative; /* Thêm một vị trí tương đối để sử dụng vị trí tuyệt đối cho nút */
+}
+
+.headline-left .button-right {
+  position: absolute;
+  right: 10px; /* Thay đổi khoảng cách nút bên phải so với lề phải */
+  top: 8px;
+}
+
+.headline-left .button-left {
+  position: absolute;
+  right: 170px; /* Thay đổi khoảng cách nút bên trái so với lề phải */
+  top: 8px;
+}
+
+.headline .headline-left a {
+  font-size: 20px;
+  padding-right: 10px;
+  color: #08090b;
+}
+
+.headline-right {
+  text-align: left;
+  width: 50%;
+}
+
+/* Sử dụng media query để điều chỉnh CSS dựa trên kích thước màn hình */
+@media (max-width: 768px) {
+  .headline-left {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .headline-left .button-right,
+  .headline-left .button-left {
+    position: static; /* Hủy bỏ vị trí tuyệt đối để nút nằm giữa */
+    margin-top: 8.6px;
+    margin-right: 10px;
+  }
+
+  .headline-right {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+   .headline .headline-right h1 {
+    color: #0b4397;
+    font-family: 'Bungee', cursive;
+    letter-spacing: -.5px;
+    font-weight: 900;
+    height: 100%;
+    font-size: 55px;
+    padding-left: 20px;
+  }
+  .headline .headline-right a{
+    text-decoration: none;
+  }
+  @media (max-width: 768px) {
+    .headline .headline-right h1 {
+      font-size: 46px; /* Điều chỉnh kích thước cho màn hình nhỏ hơn */
+    }
+  }  
+
+  
   body {
     font-family: 'Montserrat', sans-serif;
     background: #2590EB;
@@ -12,7 +91,7 @@
   .wrapper {
     margin: auto;
     max-width: 640px;
-    padding-top: 60px;
+    padding-top: 140px;
     text-align: center;
   }
   
@@ -35,7 +114,6 @@
     letter-spacing: -.5px;
     font-weight: 700;
     font-size: 55 ;
-    padding-bottom: 10px;
   }
   
   .upload-container {
@@ -140,31 +218,6 @@
     transition: color .2s ease-in-out;
   }
   
-  input[type=file] {
-    width: 350px;
-    max-width: 100%;
-    color: #444;
-    padding: 5px;
-    background: #fff;
-    border-radius: 10px;
-    border: 1px solid #555;
-  }
-  
-  input[type=file]::file-selector-button {
-    margin-right: 20px;
-    border: none;
-    background: #084cdf;
-    padding: 10px 20px;
-    border-radius: 10px;
-    color: #fff;
-    cursor: pointer;
-    transition: background .2s ease-in-out;
-  }
-  
-  input[type=file]::file-selector-button:hover {
-    background: #0d45a5;
-  }
-  
   
    .header {
       display: flex;
@@ -219,7 +272,9 @@
     box-sizing: border-box; /* Ensure the width and height include padding and border */
     border: none;
   }
-
+ .container h2{
+    color: #0b4397;
+  }
   .copy-text {
     position: relative;
     padding: 10px;
@@ -279,31 +334,6 @@
     .copy-text.active button:after {
       display: block;
     }
-    .button-two {
-      padding:10px 40px;
-      outline: none;
-      background-color: #1cbe44;
-      border: none;
-      border-radius:5px;
-      box-shadow: 0 6px #95a5a6;
-      border-radius: 10px;
-      margin-top: 13px;
-    }
-    
-    .button-two:hover{
-      background-color: #03a42b;
-      border-radius: 10px;
-      margin-top: 13px;
-    }
-    
-    .button-two:active {
-      background-color: #03a42b;
-      box-shadow: 0 5px #95a5a6;
-      transform: translateY(4px);
-      border-radius: 10px;
-      margin-top: 13px;
-    
-    }
 
     .button-three {
         padding:10px 40px;
@@ -330,11 +360,29 @@
         margin-top: 13px;
       
       }
-      footer {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        padding: 10px;
-        text-align: left;
-      }
+      
+	  
+  .button-login {
+    padding:15px 45px;
+    background-color: #2590EB;
+    border-radius: 10px;
+  }
+  .button-login:hover{
+    padding:15px 45px;
+    background-color: #0b4397;
+    border-radius: 10px;
+  }
+  
+  .button-four {
+    padding:15px 45px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    color: #2590EB;
+  }
+  .button-four:hover{
+    padding:15px 45px;
+    background-color: #95a5a6;
+    border-radius: 10px;
+    color: #2590EB;
+  }
+  

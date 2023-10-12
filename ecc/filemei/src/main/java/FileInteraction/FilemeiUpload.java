@@ -18,7 +18,11 @@ import javax.servlet.annotation.*;
  */
 public class FilemeiUpload extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+	public void doGet(HttpServletRequest req, HttpServletResponse rsp)   throws ServletException, IOException {
+		String filename = req.getParameter("filename");
+		req.setAttribute("filename", filename);
+		getServletContext().getRequestDispatcher("/download/").forward(req, rsp);
+	}
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		/* Receive file uploaded to the Servlet from the HTML5 form */
@@ -31,8 +35,8 @@ public class FilemeiUpload extends HttpServlet {
 				if(!fileName.isEmpty()){
 					part.write(this.getFolderUpload().getAbsolutePath() + File.separator + fileName);
 					//response.getWriter().print("upload success.");
-					request.setAttribute("filename", fileName);
-					//getServletContext().getRequestDispatcher("/download.jsp").forward(request, response);
+					
+					
 				}
 			  }
 		} catch (Exception e) {

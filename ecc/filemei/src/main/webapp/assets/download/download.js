@@ -17,3 +17,6 @@ function copy() {
       setTimeout(function () {	copyTexts.classList.remove("active");}, 1500);
     
   } 
+  function linkTrigger(link){
+	window.location.href= link;	
+}
