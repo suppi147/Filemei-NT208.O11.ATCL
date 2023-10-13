@@ -1,0 +1,388 @@
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+  }
+  
+  .headline {
+  width: 100%;
+  position: absolute;
+  background-color: #0a84ee;
+  display: flex;
+  flex-wrap: wrap; /* Để các phần tử con có thể xuống dòng nếu không đủ chỗ */
+}
+
+.headline-left {
+  text-align: right;
+  width: 50%;
+  display: flex;
+  justify-content: flex-end; /* Đẩy phần nút sang bên phải */
+  position: relative; /* Thêm một vị trí tương đối để sử dụng vị trí tuyệt đối cho nút */
+}
+
+.headline-left .button-right {
+  position: absolute;
+  right: 10px; /* Thay đổi khoảng cách nút bên phải so với lề phải */
+  top: 8px;
+}
+
+.headline-left .button-left {
+  position: absolute;
+  right: 170px; /* Thay đổi khoảng cách nút bên trái so với lề phải */
+  top: 8px;
+}
+
+.headline .headline-left a {
+  font-size: 20px;
+  padding-right: 10px;
+  color: #08090b;
+}
+
+.headline-right {
+  text-align: left;
+  width: 50%;
+}
+
+/* Sử dụng media query để điều chỉnh CSS dựa trên kích thước màn hình */
+@media (max-width: 768px) {
+  .headline-left {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .headline-left .button-right,
+  .headline-left .button-left {
+    position: static; /* Hủy bỏ vị trí tuyệt đối để nút nằm giữa */
+    margin-top: 8.6px;
+    margin-right: 10px;
+  }
+
+  .headline-right {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+   .headline .headline-right h1 {
+    color: #0b4397;
+    font-family: 'Bungee', cursive;
+    letter-spacing: -.5px;
+    font-weight: 900;
+    height: 100%;
+    font-size: 55px;
+    padding-left: 20px;
+  }
+  .headline .headline-right a{
+    text-decoration: none;
+  }
+  @media (max-width: 768px) {
+    .headline .headline-right h1 {
+      font-size: 46px; /* Điều chỉnh kích thước cho màn hình nhỏ hơn */
+    }
+  }  
+
+  
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background: #2590EB;
+  }
+  
+  .wrapper {
+    margin: auto;
+    max-width: 640px;
+    padding-top: 140px;
+    text-align: center;
+  }
+  
+  .container {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    /*border: 0.5px solid rgba(130, 130, 130, 0.25);*/
+    /*box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 
+                0 0 0 1px rgba(0, 0, 0, 0.1);*/
+  }
+  p{
+    font-family: 'Montserrat', sans-serif;
+  
+    color: #0b214d;
+  }
+  h1 {
+    color: #0b4397;
+    font-family: 'Bungee', cursive;
+    letter-spacing: -.5px;
+    font-weight: 700;
+    font-size: 55 ;
+  }
+  
+  .upload-container {
+    background-color: rgb(239, 239, 239);
+    border-radius: 6px;
+    padding: 10px;
+  }
+  
+  .border-container {
+    border: 5px dashed rgba(10, 10, 10, 0.65);
+  /*   border-radius: 4px; */
+    padding: 20px;
+  }
+  
+  .border-container p {
+    color: #130f40;
+    font-weight: 600;
+    font-size: 1.1em;
+    letter-spacing: -1px;
+    margin-top: 30px;
+    margin-bottom: 0;
+    opacity: 0.85;
+  }
+  
+  #file-browser {
+    text-decoration: none;
+    color: rgb(22,42,255);
+    border-bottom: 3px dotted rgba(22, 22, 255, 0.85);
+  }
+  
+  #file-browser:hover {
+    color: rgb(0, 0, 255);
+    border-bottom: 3px dotted rgba(0, 0, 255, 0.85);
+  }
+  
+  .icons {
+    color: #95afc0;
+    opacity: 0.85;
+  }
+  
+  .drop-container {
+    position: relative;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px dashed #555;
+    color: #444;
+    cursor: pointer;
+    transition: background .2s ease-in-out, border .2s ease-in-out;
+  }
+  
+  .drop-container:hover {
+    background: #eee;
+    border-color: #111;
+  }
+  button{
+    color:#fff;
+    text-align: center;
+    font-family: 'Bungee', cursive;
+  
+  }
+  .button-one {
+    padding:10px 40px;
+    outline: none;
+    background-color: #8c61cb;
+    border: none;
+    border-radius:5px;
+    box-shadow: 0 6px #95a5a6;
+    border-radius: 10px;
+    margin-top: 13px;
+  }
+  
+  .button-one:hover{
+    background-color: #8c61cb;
+    border-radius: 10px;
+    margin-top: 13px;
+  }
+  
+  .button-one:active {
+    background-color: #6b29ce;
+    box-shadow: 0 5px #95a5a6;
+    transform: translateY(4px);
+    border-radius: 10px;
+    margin-top: 13px;
+  
+  }
+  
+  .drop-container:hover .drop-title {
+    color: #222;
+  }
+  
+  .drop-title {
+    color: #444;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    transition: color .2s ease-in-out;
+  }
+  
+  
+   .header {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 100px;
+      box-shadow: 0px 35px 60px rgba(0, 0, 0, 0.25);
+    }
+    
+    .header__logo {
+      text-transform: uppercase;
+    }
+    
+    .header__menu {
+      display: flex;
+      column-gap: 54px;
+    }
+    
+    .header__link {
+      font-size: 20px;
+      text-transform: uppercase;
+      color: #6A6A6A;
+      text-decoration: none;
+      position: relative;
+    }
+    
+    .header__link::after {
+      content: "";
+      width: 0px;
+      height: 2px;
+      background: blue;
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      transition: 0.3s ease;
+    }
+    
+    .header__link:hover::after {
+      width: 100%;
+      transition: 0.3s ease;
+    }
+    
+    
+    .label {
+      padding: 10px;
+      font-size: 18px;
+      color: #111;
+    }
+.textbox {
+    width: 100%; /* Set the width of the text box to 100% of the container */
+    height: 100%; /* Set the height of the text box to 100% of the container */
+    box-sizing: border-box; /* Ensure the width and height include padding and border */
+    border: none;
+  }
+ .container h2{
+    color: #0b4397;
+  }
+  .copy-text {
+    position: relative;
+    padding: 10px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  }    
+
+
+    .copy-text input.text {
+      padding: 10px;
+      font-size: 18px;
+      color: #555;
+      border: none;
+      outline: none;
+    }
+    .copy-text button {
+      padding: 10px;
+      background: #5784f5;
+      color: #fff;
+      font-size: 18px;
+      border: none;
+      outline: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    
+    .copy-text button:active {
+      background: #809ce2;
+    }
+    .copy-text button:before {
+      content: "Copied";
+      position: absolute;
+      top: -45px;
+      right: 0px;
+      background: #5c81dc;
+      padding: 8px 10px;
+      border-radius: 20px;
+      font-size: 15px;
+      display: none;
+    }
+    .copy-text button:after {
+      content: "";
+      position: absolute;
+      top: -20px;
+      right: 25px;
+      width: 10px;
+      height: 10px;
+      background: #5c81dc;
+      transform: rotate(45deg);
+      display: none;
+    }
+    .copy-text.active button:before,
+    .copy-text.active button:after {
+      display: block;
+    }
+
+    .button-three {
+        padding:10px 40px;
+        outline: none;
+        background-color: #8c61cb;
+        border: none;
+        border-radius:5px;
+        box-shadow: 0 6px #95a5a6;
+        border-radius: 10px;
+        margin-top: 13px;
+      }
+      
+      .button-three:hover{
+        background-color: #6b29ce;
+        border-radius: 10px;
+        margin-top: 13px;
+      }
+      
+      .button-three:active {
+        background-color: #6b29ce;
+        box-shadow: 0 5px #95a5a6;
+        transform: translateY(4px);
+        border-radius: 10px;
+        margin-top: 13px;
+      
+      }
+      
+	  
+  .button-login {
+    padding:15px 45px;
+    background-color: #2590EB;
+    border-radius: 10px;
+  }
+  .button-login:hover{
+    padding:15px 45px;
+    background-color: #0b4397;
+    border-radius: 10px;
+  }
+  
+  .button-four {
+    padding:15px 45px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    color: #2590EB;
+  }
+  .button-four:hover{
+    padding:15px 45px;
+    background-color: #95a5a6;
+    border-radius: 10px;
+    color: #2590EB;
+  }
+  
