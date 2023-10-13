@@ -10,7 +10,7 @@
   <div class="wrapper">
 	<div class="heading">
 	<a href="http://localhost:8080/filemei/home/"><h1>Filemei</h1></a>
-	<p>Let verified your email first</p>
+	<p>Let verify your email first</p>
 	</div>
 	
 	<div class="input-group">
