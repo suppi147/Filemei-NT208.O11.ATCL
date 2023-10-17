@@ -1,8 +1,11 @@
 <%@ page language="java" contentType="text/html"%>
+
   <!DOCTYPE html>
   <html lang="en">
   <head>
+	<title>Filemei</title>
   <link href="/filemei/assets/login/login.css" rel="stylesheet" />
+  <link rel="shortcut icon" href="/filemei/assets/filemei.ico" type="image/x-icon">
    <script src="/filemei/assets/login/login.js"></script>
   
   </head>
@@ -12,13 +15,12 @@
 	<a href="http://localhost:8080/filemei/home/"><h1>Filemei</h1></a>
 	<p>Sign In to your account</p>
 	</div>
-	
+	<form action="/filemei/LoginServlet" method="post">
 	<div class="input-group">
-	 <input type="text" id="username" class="input-field" placeholder="Email" >
+	 <input type="text" id="username" name="username" class="input-field" placeholder="Email" required>
 	</div>
-	
 	<div class="input-group">
-	 <input type="password" id="password" class="input-field" placeholder="Password" >
+	 <input type="password" id="password" name="password" class="input-field" placeholder="Password" required>
 	</div>
 	
 	<div class="input-group row">
@@ -38,6 +40,7 @@
 	<div class="input-group">
 	<button>Login <i class="fa-solid fa-arrow-right"></i></button>
 	</div>
+	</form>
 	<div class="signup">
 	<p>Don't have an account? <a href="/filemei/signup">Sign up.</a></p>
 	</div>

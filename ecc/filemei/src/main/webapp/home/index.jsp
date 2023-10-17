@@ -1,9 +1,18 @@
 <%@ page language="java" contentType="text/html"%>
+<%
+String userName = null;
+Cookie[] cookies = request.getCookies();
+if(cookies !=null){
+for(Cookie cookie : cookies){
+	if(cookie.getName().equals("filemeicookie")) userName = cookie.getValue();
+}
+}
+if(userName == null) response.sendRedirect("/filemei/login/");
+%>
   <!DOCTYPE html>
   <html lang="en">
   <head>
     <meta charset="utf-8">
-
     <title>Filemei</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
@@ -21,7 +30,7 @@
 <body>
 <div class="headline">
   <div class="headline-right">
-    <a href="#"><h1>filemei</h1></a>
+    <a href="/filemei/home"><h1>filemei</h1></a>
   </div>
   <div class="headline-left">
     <div class="button-right">

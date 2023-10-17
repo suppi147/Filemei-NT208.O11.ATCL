@@ -29,4 +29,24 @@
     <servlet-name>FilemeiDownload</servlet-name>
     <url-pattern>/FilemeiDownload</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>testCon</display-name>
+    <servlet-name>testCon</servlet-name>
+    <servlet-class>DBInteraction.testCon</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>testCon</servlet-name>
+    <url-pattern>/testCon</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LoginServlet</display-name>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>AuthInteraction.LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/LoginServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
