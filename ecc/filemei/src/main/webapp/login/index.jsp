@@ -15,9 +15,9 @@
 	<a href="http://localhost:8080/filemei/home/"><h1>Filemei</h1></a>
 	<p>Sign In to your account</p>
 	</div>
-	<form action="/filemei/LoginServlet" method="post">
+	<form action="/filemei/loginware" method="post">
 	<div class="input-group">
-	 <input type="text" id="username" name="username" class="input-field" placeholder="Email" required>
+	 <input type="text" id="username" name="email" class="input-field" placeholder="Email" required>
 	</div>
 	<div class="input-group">
 	 <input type="password" id="password" name="password" class="input-field" placeholder="Password" required>

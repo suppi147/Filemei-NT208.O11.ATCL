@@ -1,14 +1,4 @@
 <%@ page language="java" contentType="text/html"%>
-<%
-String userName = null;
-Cookie[] cookies = request.getCookies();
-if(cookies !=null){
-for(Cookie cookie : cookies){
-	if(cookie.getName().equals("filemeicookie")) userName = cookie.getValue();
-}
-}
-if(userName == null) response.sendRedirect("/filemei/login/");
-%>
   <!DOCTYPE html>
   <html lang="en">
   <head>
