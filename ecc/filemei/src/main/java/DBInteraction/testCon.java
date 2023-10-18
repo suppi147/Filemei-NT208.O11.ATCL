@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import java.sql.*;
-
-
+import DBController.DBController;
+import DBController.LoginAction;
 
 /**
  * Servlet implementation class testCon
@@ -32,24 +32,11 @@ public class testCon extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			try {
-	            // connection	        	
-	            String url = "jdbc:mysql://127.0.0.1:3306/test";
-	            String user = "root";
-	            String password = "123";
-	            Connection conn = DriverManager.getConnection(url, user, password);
-	            if (conn != null) {
-	            	response.getWriter().write("success");
-	            }
-	        	} catch (SQLException ex) {
-	        		response.getWriter().write("xxx");
-	                ex.printStackTrace();
-	        }
-		} catch (ClassNotFoundException e) {
-            
-            e.printStackTrace();
-		}		
+			LoginAction a = new LoginAction("admin","admind");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }
