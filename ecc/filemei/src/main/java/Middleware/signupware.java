@@ -9,20 +9,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import DBController.LoginAction;
+import DBController.SignUpAction;
 import Middleware.CookieTrigger;
 
 /**
  * Servlet implementation class loginware
  */
-@WebServlet(name = "loginware", urlPatterns = { "/loginware" })
-public class loginware extends HttpServlet {
+@WebServlet(name = "signupware", urlPatterns = { "/signupware" })
+public class signupware extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public loginware() {
+    public signupware() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -36,14 +36,14 @@ public class loginware extends HttpServlet {
 	    String password = request.getParameter("password");
 	    
 	    try {
-			LoginAction loginCheck = new LoginAction();
+	    	SignUpAction signupInsert = new SignUpAction();
 			CookieTrigger cookietrigger = new CookieTrigger();
-			if(loginCheck.LoginCheck(email, password)) {
+			if(signupInsert.SignUpInsert(email, password)) {
 				response.addCookie(cookietrigger.GenCookie(email));
 				response.sendRedirect("/filemei/warehouse/");
 			}
 			else {
-				response.sendRedirect("/filemei/login/");
+				response.sendRedirect("/filemei/signup/");
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

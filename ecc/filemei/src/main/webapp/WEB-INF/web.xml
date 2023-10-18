@@ -59,4 +59,24 @@
     <servlet-name>loginware</servlet-name>
     <url-pattern>/loginware</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>singupware</display-name>
+    <servlet-name>singupware</servlet-name>
+    <servlet-class>Middleware.singupware</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>singupware</servlet-name>
+    <url-pattern>/singupware</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>signupware</display-name>
+    <servlet-name>signupware</servlet-name>
+    <servlet-class>Middleware.signupware</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>signupware</servlet-name>
+    <url-pattern>/signupware</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -1,13 +1,17 @@
-<%@ page language="java" contentType="text/html"%>
+<%@ page import = "DBController.SessionAction" language="java" contentType="text/html"%>
 <%
-String userName = null;
+
+String seszion = "";
 Cookie[] cookies = request.getCookies();
 if(cookies !=null){
 for(Cookie cookie : cookies){
-	if(cookie.getName().equals("filemeicookie")) userName = cookie.getValue();
+	if(cookie.getName().equals("filemeicookie")) seszion = cookie.getValue();
 }
 }
-if(userName == null) response.sendRedirect("/filemei/login/");
+if(seszion.equals("null") || seszion.equals("")) response.sendRedirect("/filemei/login/");
+
+SessionAction checkemail= new SessionAction();
+String emailuser = checkemail.GetEmailBySession(seszion);
 %>
   <!DOCTYPE html>
   <html lang="en">
@@ -28,7 +32,7 @@ if(userName == null) response.sendRedirect("/filemei/login/");
 </head>
 
 <body>
-<h1>hihi</h1>
+<h1>hihi <%=  emailuser%></h1>
 </body>
 </html>
     

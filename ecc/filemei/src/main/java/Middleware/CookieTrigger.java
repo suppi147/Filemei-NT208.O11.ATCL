@@ -1,12 +1,14 @@
 package Middleware;
 
+import java.sql.SQLException;
 import java.util.Random;
 
 import javax.servlet.http.Cookie;
-
+import DBController.SessionAction;
 public class CookieTrigger {
 	private static final String CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
     private static final int STRING_LENGTH = 64;
+    private String cookie;
 
 	public static String generateRandomString() {
         Random random = new Random();
@@ -20,8 +22,10 @@ public class CookieTrigger {
 
         return sb.toString();
     }
-	public Cookie GenCookie() {
-		Cookie loginCookie = new Cookie("filemeicookie",generateRandomString());
+	public Cookie GenCookie(String email) throws SQLException {
+		this.cookie=generateRandomString();
+		SessionAction sessionUpdate = new SessionAction(this.cookie,email);
+		Cookie loginCookie = new Cookie("filemeicookie",this.cookie);
 		loginCookie.setMaxAge(30*60);
 		return loginCookie;
 	}
