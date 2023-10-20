@@ -89,4 +89,14 @@
     <servlet-name>codeware</servlet-name>
     <url-pattern>/codeware</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>retrievepasswordware</display-name>
+    <servlet-name>retrievepasswordware</servlet-name>
+    <servlet-class>Middleware.retrievepasswordware</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>retrievepasswordware</servlet-name>
+    <url-pattern>/retrievepasswordware</url-pattern>
+  </servlet-mapping>
 </web-app>

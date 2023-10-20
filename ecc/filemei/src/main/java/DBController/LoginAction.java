@@ -22,4 +22,14 @@ public class LoginAction extends DBController {
         }
         return false;
 	}
+	public String GetPassword(String email) throws SQLException {
+		PreparedStatement myStmt = this.connection.prepareStatement(fetchsql);
+		 myStmt.setString(1, email);
+		 ResultSet myRs= myStmt.executeQuery();
+        if (myRs.next()) {
+       	 String checkpass = myRs.getString("password");
+       	 return checkpass;
+        }
+        return "";
+	}
 }
