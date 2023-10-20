@@ -8,45 +8,47 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import DBController.LoginAction;
+import DBController.CodeAction;
 import Middleware.CookieTrigger;
 
 /**
- * Servlet implementation class loginware
+ * Servlet implementation class codeware
  */
-@WebServlet(name = "loginware", urlPatterns = { "/loginware" })
-public class loginware extends HttpServlet {
+@WebServlet(name = "codeware", urlPatterns = { "/codeware" })
+
+public class codeware extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public loginware() {
+    public codeware() {
         super();
         // TODO Auto-generated constructor stub
     }
+    
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)	 */
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
+   
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		String email = request.getParameter("email");
-	    String password = request.getParameter("password");
-	    
-	    try {
-			LoginAction loginCheck = new LoginAction();
-			CookieTrigger cookietrigger = new CookieTrigger();
-			if(loginCheck.LoginCheck(email, password)) {
-				response.addCookie(cookietrigger.GenCookieByEmail(email));
-				System.out.print("wrong xxx");
+		
+		String code = request.getParameter("code");
+		int codeI = Integer.parseInt(code);
+		CodeAction authCode = new CodeAction();
+		try {
+			if(authCode.checkCode(codeI)) {
+				CookieTrigger cookietrigger = new CookieTrigger();
+				response.addCookie(cookietrigger.GenCookie(codeI));
 				response.sendRedirect("/filemei/warehouse/");
 			}
 			else {
-				
-				response.sendRedirect("/filemei/login/");
+				response.sendRedirect("/filemei/signup/EmailVerification.jsp");	
 			}
+			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

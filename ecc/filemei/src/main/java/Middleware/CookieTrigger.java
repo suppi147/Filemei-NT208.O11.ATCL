@@ -22,9 +22,18 @@ public class CookieTrigger {
 
         return sb.toString();
     }
-	public Cookie GenCookie(String email) throws SQLException {
+	public Cookie GenCookie(int code) throws SQLException {
 		this.cookie=generateRandomString();
-		SessionAction sessionUpdate = new SessionAction(this.cookie,email);
+		SessionAction sessionUpdate = new SessionAction();
+		sessionUpdate.SetSessionByCode(this.cookie,code);
+		Cookie loginCookie = new Cookie("filemeicookie",this.cookie);
+		loginCookie.setMaxAge(30*60);
+		return loginCookie;
+	}
+	public Cookie GenCookieByEmail(String email) throws SQLException {
+		this.cookie=generateRandomString();
+		SessionAction sessionUpdate = new SessionAction();
+		sessionUpdate.SetSessionByEmail(this.cookie, email);
 		Cookie loginCookie = new Cookie("filemeicookie",this.cookie);
 		loginCookie.setMaxAge(30*60);
 		return loginCookie;

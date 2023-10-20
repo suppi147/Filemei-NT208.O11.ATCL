@@ -5,13 +5,28 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class SessionAction extends DBController {
-    private String updateSql = "UPDATE authtb SET session = ? WHERE email = ?";
+    private String updateSql = "UPDATE authtb SET session = ? WHERE code = ?";
+    private String updateSqlEmail = "UPDATE authtb SET session = ? WHERE email = ?";
     private String selectEmailSql = "SELECT email FROM authtb WHERE session = ?";
     public SessionAction() {
     }
-    public SessionAction(String session, String email) throws SQLException {
+    public void SetSessionByCode(String session, int code) throws SQLException {
         this.Connect("authdb");
         PreparedStatement updateStmt = this.connection.prepareStatement(updateSql);
+        updateStmt.setString(1, session);
+        updateStmt.setInt(2, code);
+        int rowsAffected = updateStmt.executeUpdate();
+        
+        if (rowsAffected > 0) {
+            System.out.println("Session updated successfully.");
+        } else {
+            System.out.println("No rows updated. code not found.");
+        }
+    }
+    
+    public void SetSessionByEmail(String session, String email) throws SQLException {
+        this.Connect("authdb");
+        PreparedStatement updateStmt = this.connection.prepareStatement(updateSqlEmail);
         updateStmt.setString(1, session);
         updateStmt.setString(2, email);
         int rowsAffected = updateStmt.executeUpdate();
@@ -19,7 +34,7 @@ public class SessionAction extends DBController {
         if (rowsAffected > 0) {
             System.out.println("Session updated successfully.");
         } else {
-            System.out.println("No rows updated. Email not found.");
+            System.out.println("No rows updated. setString not found.");
         }
     }
 

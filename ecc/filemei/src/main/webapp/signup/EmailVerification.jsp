@@ -14,7 +14,7 @@
 	<a href="http://localhost:8080/filemei/home/"><h1>Filemei</h1></a>
 	<p>Let verify your email first</p>
 	</div>
-	<form action="action.jsp" method="post">
+	<form action="/filemei/codeware" method="post">
 	<div class="input-group">
 	 <input type="text" id="code" name="code" class="input-field" placeholder="What is the code?" required>
 	</div>

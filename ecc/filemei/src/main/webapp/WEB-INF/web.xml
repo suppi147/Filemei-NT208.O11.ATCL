@@ -79,4 +79,14 @@
     <servlet-name>signupware</servlet-name>
     <url-pattern>/signupware</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>codeware</display-name>
+    <servlet-name>codeware</servlet-name>
+    <servlet-class>Middleware.codeware</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>codeware</servlet-name>
+    <url-pattern>/codeware</url-pattern>
+  </servlet-mapping>
 </web-app>
