@@ -44,6 +44,7 @@ public class codeware extends HttpServlet {
 				CookieTrigger cookietrigger = new CookieTrigger();
 				response.addCookie(cookietrigger.GenCookie(codeI));
 				response.sendRedirect("/filemei/warehouse/");
+				
 			}
 			else {
 				response.sendRedirect("/filemei/signup/EmailVerification.jsp");	

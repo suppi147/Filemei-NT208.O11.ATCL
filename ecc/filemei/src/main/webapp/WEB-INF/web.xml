@@ -99,4 +99,14 @@
     <servlet-name>retrievepasswordware</servlet-name>
     <url-pattern>/retrievepasswordware</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>logoutware</display-name>
+    <servlet-name>logoutware</servlet-name>
+    <servlet-class>Middleware.logoutware</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>logoutware</servlet-name>
+    <url-pattern>/logoutware</url-pattern>
+  </servlet-mapping>
 </web-app>

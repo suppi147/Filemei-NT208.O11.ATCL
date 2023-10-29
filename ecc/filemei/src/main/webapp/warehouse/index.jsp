@@ -15,7 +15,7 @@ String emailuser = checkemail.GetEmailBySession(seszion);
 %>
   <!DOCTYPE html>
   <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <title>Filemei</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,6 +33,30 @@ String emailuser = checkemail.GetEmailBySession(seszion);
 
 <body>
 <h1>hihi <%=  emailuser%></h1>
+<div class="button-left">
+      <button class="button-four" onclick="linkTrigger('/filemei/logoutware')">Sign out</button>
+    </div>
+<div class="wrapper">
+  <div class="container">
+    <a href="#" style="text-decoration: none;">
+      <h2>Super simple file sharing!</h2>
+    </a>
+    <p>Upload as many files as you like up to <strong>1 GB</strong> and get a link to share&#128230;</p>
+    <div class="upload-container">
+      <div class="border-container">          
+          <form id="FilemeiUpload" action="/filemei/FilemeiUpload" method="post" enctype="multipart/form-data" class="hidden">
+            <input type="file" name="fileToUpload" id="fileToUpload" multiple>
+          </form>
+          <progress id="progressBar" max="100" value="0" style="display:none;"></progress>
+      </div>
+    </div>
+    <div class="w3-light-grey" style="visibility:hidden;">
+  			<div id="myBar" class="w3-container w3-blue w3-round-xlarge" style="width:0%;">0%</div>
+	  </div>
+    <button id="submit" class="button-two" type="submit" onclick="uploadBar2();emptyAlertdanger();">Upload</button>
+    
+  </div>
+</div>
 </body>
 </html>
     

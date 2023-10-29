@@ -21,6 +21,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import CreateUserController.CreateUserController;
 /**
  * Servlet implementation class loginware
  */
@@ -51,7 +52,7 @@ public class signupware extends HttpServlet {
     }
     public static void SendCode(int code, String email) {
         try {
-            String url = "http://ec2-13-229-199-233.ap-southeast-1.compute.amazonaws.com/codegen.php?code="+code+"&email="+email;
+            String url = "http://ec2-54-169-204-80.ap-southeast-1.compute.amazonaws.com/codegen.php?code="+code+"&email="+email;
             HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
             connection.setRequestMethod("GET");
 
@@ -85,6 +86,8 @@ public class signupware extends HttpServlet {
 				int code = generateRandomSixDigitNumber();
 				CodeAction authCode = new CodeAction(email,code);
 				SendCode(code,email);
+				CreateUserController sendEmail2UserController = new CreateUserController();
+				sendEmail2UserController.CreateFilesystem(email);
 				response.sendRedirect("/filemei/signup/EmailVerification.jsp");
 			}
 			else {

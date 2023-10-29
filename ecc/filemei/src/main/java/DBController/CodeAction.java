@@ -3,6 +3,7 @@ package DBController;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
 public class CodeAction extends DBController{
 	private String updateSql = "UPDATE authtb SET code = ? WHERE email = ?";
 	private String fetchsql = "SELECT email FROM authtb WHERE code = ?";
