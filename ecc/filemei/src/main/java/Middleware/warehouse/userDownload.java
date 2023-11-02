@@ -24,14 +24,16 @@ public class userDownload extends HttpServlet {
             HttpServletResponse response) throws ServletException, IOException {
         // reads input file from an absolute path
 		Cookie[] cookies = request.getCookies();
-
+		boolean cookflag=false;
 		if (cookies != null) {
 		    for (Cookie cookie : cookies) {
 		        String cookieName = cookie.getName();
 		        if (cookieName.equals("filemeicookie")) { // Use .equals() for string comparison
 		        	cookieFinal = cookie.getValue();
+		        	cookflag=false;
 		            break; // Exit the loop once you've found the desired cookie
 		        }
+		        cookflag=true;
 		    }
 		}
         String filePath = request.getParameter("filename");
@@ -40,7 +42,7 @@ public class userDownload extends HttpServlet {
 			String email = getEmail.GetEmailOfCookie(cookieFinal);
 			
 
-			if(email.isEmpty()) {
+			if(cookflag) {
 		        response.sendRedirect("http://localhost:8080/filemei/login/");
 			}
 			else {
