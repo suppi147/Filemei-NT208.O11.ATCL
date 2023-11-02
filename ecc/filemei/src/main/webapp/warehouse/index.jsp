@@ -44,7 +44,7 @@ String emailuser = checkemail.GetEmailBySession(seszion);
     <p>Upload as many files as you like up to <strong>1 GB</strong> and get a link to share&#128230;</p>
     <div class="upload-container">
       <div class="border-container">          
-          <form id="FilemeiUpload" action="/filemei/FilemeiUpload" method="post" enctype="multipart/form-data" class="hidden">
+          <form id="userfileToUpload" action="/filemei/UserUpload" method="post" enctype="multipart/form-data" class="hidden">
             <input type="file" name="fileToUpload" id="fileToUpload" multiple>
           </form>
           <progress id="progressBar" max="100" value="0" style="display:none;"></progress>
@@ -53,7 +53,7 @@ String emailuser = checkemail.GetEmailBySession(seszion);
     <div class="w3-light-grey" style="visibility:hidden;">
   			<div id="myBar" class="w3-container w3-blue w3-round-xlarge" style="width:0%;">0%</div>
 	  </div>
-    <button id="submit" class="button-two" type="submit" onclick="uploadBar2();emptyAlertdanger();">Upload</button>
+    <button id="submit" class="button-two" type="submit" onclick="uploadBar3();">Upload</button>
     
   </div>
 </div>

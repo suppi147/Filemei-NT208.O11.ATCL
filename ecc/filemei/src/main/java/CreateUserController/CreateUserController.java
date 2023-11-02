@@ -2,7 +2,9 @@ package CreateUserController;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.io.File;
 
 import DBController.DBController;
 public class CreateUserController {
@@ -50,6 +52,51 @@ public class CreateUserController {
             return "Invalid Email Format";
         }
 	}
+	public void CreateFolder(String email) {
+        // Specify the path of the folder you want to create
+        String folderPath = "D:\\upload\\"+email;
+
+        // Create a File object for the folder
+        File folder = new File(folderPath);
+
+        // Check if the folder already exists
+        if (!folder.exists()) {
+            // If it doesn't exist, create the folder
+            boolean folderCreated = folder.mkdir();
+
+            if (folderCreated) {
+                System.out.println("Folder created successfully.");
+            } else {
+                System.out.println("Failed to create the folder.");
+            }
+        } else {
+            System.out.println("The folder already exists.");
+        }
+    }
+	public String GetEmailOfCookie(String cookie) {
+		String email ="";
+		try {
+			this.Connect("authDB");
+	        // Establish a database connection (replace with your database connection logic)
+			
+	        // Prepare a SQL query to retrieve the email associated with the provided cookie
+	        String sql = "SELECT email FROM authtb WHERE session = ?";
+	        PreparedStatement stmt = this.connection.prepareStatement(sql);
+	        stmt.setString(1, cookie);
+
+	        // Execute the query
+	        ResultSet rs = stmt.executeQuery();
+
+	        // Check if a result was found
+	        if (rs.next()) {
+	            email = rs.getString("email");
+	        }
+	    } catch (SQLException e) {
+	        // Handle any database-related exceptions here
+	        e.printStackTrace();
+	    }
+		return email;
+	}
 	public void CreateFilesystem(String email) {
 		String query= filesystem1query + extractUsername(email) + filesystem2query;
 		this.Connect("userdb");
@@ -66,6 +113,6 @@ public class CreateUserController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	    
+		CreateFolder(email);
 	}
 }

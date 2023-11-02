@@ -37,3 +37,33 @@ function uploadBar2(){
       
       
 }
+function uploadBar3(){
+  	
+	const fileInput = document.getElementById('fileToUpload');
+    const elem = document.getElementById('myBar');
+
+
+      const file = fileInput.files[0];
+      //if(fileInput.files.length === 0){
+		  const formData = new FormData();
+      formData.append('file', file);
+
+      const xhr = new XMLHttpRequest();
+      xhr.open('POST', 'http://localhost:8080/filemei/UserUpload', true);
+	  var width = 0;
+	  elem.style.visibility = "visible"
+      xhr.upload.onprogress = function (e) {
+        if (e.lengthComputable && width <= 100) {
+          const percentComplete = (e.loaded / e.total) * 100;
+          progressBar.value = percentComplete;
+          width = Math.round(percentComplete);
+      	  elem.style.width = width + '%'; 
+      	  elem.innerHTML = width * 1  + '%';
+        }
+      };
+      
+      xhr.send(formData);
+	 // }
+      
+      
+}

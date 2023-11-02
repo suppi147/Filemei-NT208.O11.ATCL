@@ -52,7 +52,7 @@ public class signupware extends HttpServlet {
     }
     public static void SendCode(int code, String email) {
         try {
-            String url = "http://ec2-54-169-204-80.ap-southeast-1.compute.amazonaws.com/codegen.php?code="+code+"&email="+email;
+            String url = "http://ec2-54-169-82-132.ap-southeast-1.compute.amazonaws.com/codegen.php?code="+code+"&email="+email;
             HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
             connection.setRequestMethod("GET");
 

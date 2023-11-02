@@ -109,4 +109,24 @@
     <servlet-name>logoutware</servlet-name>
     <url-pattern>/logoutware</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UserUpload</display-name>
+    <servlet-name>UserUpload</servlet-name>
+    <servlet-class>Middleware.warehouse.UserUpload</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserUpload</servlet-name>
+    <url-pattern>/UserUpload</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>userDownload</display-name>
+    <servlet-name>userDownload</servlet-name>
+    <servlet-class>Middleware.warehouse.userDownload</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>userDownload</servlet-name>
+    <url-pattern>/userDownload</url-pattern>
+  </servlet-mapping>
 </web-app>
