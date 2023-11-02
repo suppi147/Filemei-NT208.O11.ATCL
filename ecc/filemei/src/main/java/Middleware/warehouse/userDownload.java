@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -37,8 +38,9 @@ public class userDownload extends HttpServlet {
 		if(!filePath.isEmpty()){
 			CreateUserController getEmail = new CreateUserController();
 			String email = getEmail.GetEmailOfCookie(cookieFinal);
+			
 
-			if(cookieFinal.isEmpty()) {
+			if(email.isEmpty()) {
 		        response.sendRedirect("http://localhost:8080/filemei/login/");
 			}
 			else {
@@ -83,9 +85,6 @@ public class userDownload extends HttpServlet {
 				outStream.close();     
 				}
 			}
-		else {
-	        response.sendRedirect("http://localhost:8080/filemei/login/");
-		} 
+        
     }
-	
 }
