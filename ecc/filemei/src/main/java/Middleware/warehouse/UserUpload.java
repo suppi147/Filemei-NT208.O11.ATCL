@@ -9,6 +9,7 @@ import javax.servlet.annotation.*;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import CreateUserController.CreateUserController;
+import CreateUserController.LinkInteraction;
 
 @WebServlet(name = "UserUpload", urlPatterns = { "/UserUpload" })
 @MultipartConfig(
@@ -42,11 +43,11 @@ public class UserUpload extends HttpServlet {
 		        }
 		    }
 		}
-
+		String fileName="";
 		cookieFinal= cookieValue;
 		try {
 			for (Part part : request.getParts()) {
-				String fileName = extractFileName(part);
+				fileName = extractFileName(part);
 				// refines the fileName in case it is an absolute path
 				fileName = new File(fileName).getName();
 				if(!fileName.isEmpty()){
@@ -60,8 +61,10 @@ public class UserUpload extends HttpServlet {
 		} catch (Exception e) {
 			response.getWriter().print("upload failed.");
 		}
-		
-		  
+		CreateUserController getEmail = new CreateUserController();
+		String email = getEmail.GetEmailOfCookie(cookieValue);
+		LinkInteraction linkinsert = new LinkInteraction();
+		linkinsert.LinkAdd(email, fileName);
 	  }
 	  private String extractFileName(Part part) {
 		String contentDisp = part.getHeader("content-disposition");

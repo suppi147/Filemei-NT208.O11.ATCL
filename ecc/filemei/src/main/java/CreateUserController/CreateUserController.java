@@ -9,7 +9,7 @@ import java.io.File;
 import DBController.DBController;
 public class CreateUserController {
 	private static String filesystem1query="CREATE TABLE filesystem_";
-	private static String filesystem2query=" (id INT AUTO_INCREMENT PRIMARY KEY, link VARCHAR(50));";
+	private static String filesystem2query=" (id INT AUTO_INCREMENT PRIMARY KEY, link VARCHAR(255));";
 	
 	private static String accessfile1query="CREATE TABLE ";
 	private static String accessfile2query="_access (id INT AUTO_INCREMENT PRIMARY KEY, email VARCHAR(50));";

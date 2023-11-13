@@ -129,4 +129,14 @@
     <servlet-name>userDownload</servlet-name>
     <url-pattern>/userDownload</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LinkInteraction</display-name>
+    <servlet-name>LinkInteraction</servlet-name>
+    <servlet-class>CreateUserController.LinkInteraction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LinkInteraction</servlet-name>
+    <url-pattern>/LinkInteraction</url-pattern>
+  </servlet-mapping>
 </web-app>

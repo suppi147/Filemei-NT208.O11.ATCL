@@ -40,7 +40,6 @@ public class userDownload extends HttpServlet {
 		if(!filePath.isEmpty()){
 			CreateUserController getEmail = new CreateUserController();
 			String email = getEmail.GetEmailOfCookie(cookieFinal);
-			
 
 			if(cookflag) {
 		        response.sendRedirect("http://localhost:8080/filemei/login/");

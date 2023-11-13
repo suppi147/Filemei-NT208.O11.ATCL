@@ -1,6 +1,6 @@
-<%@ page import = "DBController.SessionAction" language="java" contentType="text/html"%>
+<%@ page import = "DBController.SessionAction" import = "CreateUserController.LinkInteraction" language="java" contentType="text/html"%>
 <%
-
+String[] filelinklist = new String[100];
 String seszion = "";
 Cookie[] cookies = request.getCookies();
 if(cookies !=null){
@@ -8,10 +8,15 @@ for(Cookie cookie : cookies){
 	if(cookie.getName().equals("filemeicookie")) seszion = cookie.getValue();
 }
 }
-if(seszion.equals("null") || seszion.equals("")) response.sendRedirect("/filemei/login/");
+if(seszion.equals("null") || seszion.equals("") || seszion == null) response.sendRedirect("/filemei/login/");
 
 SessionAction checkemail= new SessionAction();
 String emailuser = checkemail.GetEmailBySession(seszion);
+
+LinkInteraction linkInteraction = new LinkInteraction();
+for(int i = 0; i < linkInteraction.getNumberofId(emailuser); i++){
+	filelinklist[i]=linkInteraction.GetLinkById(emailuser, i+1);
+}
 %>
   <!DOCTYPE html>
   <html lang="en">
@@ -33,6 +38,22 @@ String emailuser = checkemail.GetEmailBySession(seszion);
 
 <body>
 <h1>hihi <%=  emailuser%></h1>
+<table border="1">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Link</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% for(int i = 0; i < linkInteraction.getNumberofId(emailuser); i++) { %>
+            <tr>
+                <td><%= i + 1 %></td>
+                <td><%= filelinklist[i] %></td>
+            </tr>
+        <% } %>
+    </tbody>
+</table>
 <div class="button-left">
       <button class="button-four" onclick="linkTrigger('/filemei/logoutware')">Sign out</button>
     </div>
