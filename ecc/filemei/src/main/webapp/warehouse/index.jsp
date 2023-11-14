@@ -8,11 +8,10 @@ for(Cookie cookie : cookies){
 	if(cookie.getName().equals("filemeicookie")) seszion = cookie.getValue();
 }
 }
-if(seszion.equals("null") || seszion.equals("") || seszion == null) response.sendRedirect("/filemei/login/");
+if(seszion.equals("null") || seszion.equals("") || seszion == null){ response.sendRedirect("/filemei/login/"); return;}
 
 SessionAction checkemail= new SessionAction();
 String emailuser = checkemail.GetEmailBySession(seszion);
-
 LinkInteraction linkInteraction = new LinkInteraction();
 for(int i = 0; i < linkInteraction.getNumberofId(emailuser); i++){
 	filelinklist[i]=linkInteraction.GetLinkById(emailuser, i+1);
@@ -37,44 +36,49 @@ for(int i = 0; i < linkInteraction.getNumberofId(emailuser); i++){
 </head>
 
 <body>
-<h1>hihi <%=  emailuser%></h1>
-<table border="1">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Link</th>
-        </tr>
-    </thead>
-    <tbody>
-        <% for(int i = 0; i < linkInteraction.getNumberofId(emailuser); i++) { %>
-            <tr>
-                <td><%= i + 1 %></td>
-                <td><%= filelinklist[i] %></td>
-            </tr>
-        <% } %>
-    </tbody>
-</table>
+<div class="headline">
+  <div class="headline-right">
+    <a href="/filemei/home"><h1>filemei</h1></a>
+  </div>
+  <div class="headline-left">
+    <div class="button-right">
+      <button class="button-three" onclick="linkTrigger('/filemei/logoutware')">Logout</button>
+    </div>
+  </div>
+</div>
 <div class="button-left">
       <button class="button-four" onclick="linkTrigger('/filemei/logoutware')">Sign out</button>
     </div>
-<div class="wrapper">
-  <div class="container">
-    <a href="#" style="text-decoration: none;">
-      <h2>Super simple file sharing!</h2>
-    </a>
-    <p>Upload as many files as you like up to <strong>1 GB</strong> and get a link to share&#128230;</p>
-    <div class="upload-container">
-      <div class="border-container">          
+<div class="wrapper-table">
+  <div class="container-table">
+    <div class="upload-container-table">
+      
+      <table border="1">
+		<thead>
+		        <tr>
+		            <th>ID</th>
+		            <th>Link</th>
+		        </tr>
+		    </thead>
+		    <tbody>
+		        <% for(int i = 0; i < linkInteraction.getNumberofId(emailuser); i++) { %>
+		            <tr>
+		                <td><%= i + 1 %></td>
+		                <td><a href="<%= filelinklist[i] %>"><%= filelinklist[i] %></a></td>
+		            </tr>
+		        <% } %>
+		    </tbody>
+		</table>        
           <form id="userfileToUpload" action="/filemei/UserUpload" method="post" enctype="multipart/form-data" class="hidden">
-            <input type="file" name="fileToUpload" id="fileToUpload" multiple>
+            
           </form>
           <progress id="progressBar" max="100" value="0" style="display:none;"></progress>
-      </div>
     </div>
     <div class="w3-light-grey" style="visibility:hidden;">
   			<div id="myBar" class="w3-container w3-blue w3-round-xlarge" style="width:0%;">0%</div>
 	  </div>
-    <button id="submit" class="button-two" type="submit" onclick="uploadBar3();">Upload</button>
+	  <input type="file" name="fileToUpload" id="fileToUpload" multiple>
+    <button id="submit" class="button-two" type="submit" onclick="uploadBar4();">Upload</button>
     
   </div>
 </div>
