@@ -111,3 +111,37 @@ function uploadBar4() {
 }
 
 
+function shareLink(link, email) {
+  var recipientEmail = prompt("Enter recipient's email:");
+
+  if (recipientEmail === null || recipientEmail === "") {
+    return;
+  }
+
+  // Create a URL object from the link
+  var url = new URL(link);
+
+  // Extract the filename from the pathname
+  var filename = url.searchParams.get('filename');
+
+  // Append data to the URL parameters
+  url.searchParams.append('recipientEmail', recipientEmail);
+  url.searchParams.append('filename', filename);
+  url.searchParams.append('userEmail', email);
+
+  fetch('http://localhost:8080/filemei/shareware?' + url.searchParams.toString(), {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+  .then(response => response.json())
+  .then(data => {
+    console.log('Success:', data);
+    alert('Share successful!');
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+    alert('Share successful!');
+  });
+}

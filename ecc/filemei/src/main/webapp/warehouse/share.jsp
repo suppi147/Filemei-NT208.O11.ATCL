@@ -1,6 +1,7 @@
-<%@ page import = "DBController.SessionAction" import = "CreateUserController.LinkInteraction" language="java" contentType="text/html"%>
+<%@ page import = "DBController.SessionAction" import = "CreateUserController.ShareInteraction" language="java" contentType="text/html"%>
 <%
 String[] filelinklist = new String[100];
+String[] ownnerlist = new String[100];
 String seszion = "";
 Cookie[] cookies = request.getCookies();
 if(cookies !=null){
@@ -12,9 +13,12 @@ if(seszion.equals("null") || seszion.equals("") || seszion == null){ response.se
 
 SessionAction checkemail= new SessionAction();
 String emailuser = checkemail.GetEmailBySession(seszion);
-LinkInteraction linkInteraction = new LinkInteraction();
-for(int i = 0; i < linkInteraction.getNumberofId(emailuser); i++){
-	filelinklist[i]=linkInteraction.GetLinkById(emailuser, i+1);
+ShareInteraction shareInteraction = new ShareInteraction();
+for(int i = 0; i < shareInteraction.getNumberofId(emailuser); i++){
+	filelinklist[i]=shareInteraction.GetLinkShareById(emailuser, i+1);
+}
+for(int i = 0; i < shareInteraction.getNumberofId(emailuser); i++){
+	ownnerlist[i]=shareInteraction.GetOwnerShareById(emailuser, i+1);
 }
 %>
   <!DOCTYPE html>
@@ -41,56 +45,41 @@ for(int i = 0; i < linkInteraction.getNumberofId(emailuser); i++){
     <a href="/filemei/home"><h1>filemei</h1></a>
   </div>
   <div class="headline-left">
-    <div class="button-right">
+  <div class="button-right">
   <div class="dropdown">
   <button class="dropbtn">Hi, <%= emailuser %></button>
   <div class="dropdown-content">
   <a href="http://localhost:8080/filemei/warehouse/">Warehouse</a>
-  <a href="http://localhost:8080/filemei/warehouse/share.jsp">Share</a>
+  <a href="http://localhost:8080/filemei/share">Share</a>
   <a href="http://localhost:8080/filemei/logoutware">Sign out</a>
   </div>
 </div>
 </div>
   </div>
 </div>
-<div class="wrapper-table">
-  <div class="container-table">
-    <div class="upload-container-table">
+<div class="wrapper-table-share">
+  <div class="container-table-share">
+    <div class="upload-container-table-share">
       
       <table border="1">
 		<thead>
 		        <tr>
 		            <th>ID</th>
 		            <th style="text-align: center;">Link</th>
-		            <th style="width: 132px; text-align: center;">Share</th>
+		            <th style="width: 132px; text-align: center;">Owner</th>
 		        </tr>
 		    </thead>
 		    <tbody>
-		        <% for(int i = 0; i < linkInteraction.getNumberofId(emailuser); i++) { %>
+		        <% for(int i = 0; i < shareInteraction.getNumberofId(emailuser); i++) { %>
 		            <tr>
 		                <td><%= i + 1 %></td>
 		                <td><a href="<%= filelinklist[i] %>"><%= filelinklist[i] %></a></td>
-						<td><button class="share-btn button-five" onclick="shareLink('<%= filelinklist[i] %>', '<%= emailuser %>')">Share</button></td>
-		                
+		                <td><%= ownnerlist[i] %></td>
 		            </tr>
 		        <% } %>
 		    </tbody>
 		</table>        
-          <form id="userfileToUpload" action="/filemei/UserUpload" method="post" enctype="multipart/form-data" class="hidden">
-            
-          </form>
-          <progress id="progressBar" max="100" value="0" style="display:none;"></progress>
     </div>
-    <div class="w3-light-grey" style="visibility:hidden;">
-  			<div id="myBar" class="w3-container w3-blue w3-round-xlarge" style="width:0%;">0%</div>
-	  </div>
-	  <div class="upload-container">
-      <div class="border-container">
-	  <input type="file" name="fileToUpload" id="fileToUpload" multiple>
-	  </div>
-	  </div>
-    <button id="submit" class="button-two" type="submit" onclick="uploadBar4();">Upload</button>
-    
   </div>
 </div>
 </body>

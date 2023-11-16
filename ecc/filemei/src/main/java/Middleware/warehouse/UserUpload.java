@@ -10,6 +10,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import CreateUserController.CreateUserController;
 import CreateUserController.LinkInteraction;
+import Middleware.share.CopyFileShare;
 
 @WebServlet(name = "UserUpload", urlPatterns = { "/UserUpload" })
 @MultipartConfig(
@@ -29,7 +30,6 @@ public class UserUpload extends HttpServlet {
 		req.setAttribute("filename", filename);
 	}
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
 		/* Receive file uploaded to the Servlet from the HTML5 form */
 		Cookie[] cookies = request.getCookies();
 		String cookieValue = "";

@@ -9,12 +9,10 @@ import java.io.File;
 import DBController.DBController;
 public class CreateUserController {
 	private static String filesystem1query="CREATE TABLE filesystem_";
-	private static String filesystem2query=" (id INT AUTO_INCREMENT PRIMARY KEY, link VARCHAR(255));";
-	
-	private static String accessfile1query="CREATE TABLE ";
-	private static String accessfile2query="_access (id INT AUTO_INCREMENT PRIMARY KEY, email VARCHAR(50));";
-	
-	private static String getSessionQuery="CREATE TABLE ";
+	private static String filesystem2query=" (id INT AUTO_INCREMENT PRIMARY KEY, link VARCHAR(255), share VARCHAR(50));";
+	private static String sharefilesystem1query="CREATE TABLE sharefilesystem_";
+	private static String sharefilesystem2query=" (id INT AUTO_INCREMENT PRIMARY KEY, link VARCHAR(255), owner VARCHAR(50));";
+
 
 	private String url;
 	private String user;
@@ -55,6 +53,27 @@ public class CreateUserController {
 	public void CreateFolder(String email) {
         // Specify the path of the folder you want to create
         String folderPath = "D:\\upload\\"+email;
+
+        // Create a File object for the folder
+        File folder = new File(folderPath);
+
+        // Check if the folder already exists
+        if (!folder.exists()) {
+            // If it doesn't exist, create the folder
+            boolean folderCreated = folder.mkdir();
+
+            if (folderCreated) {
+                System.out.println("Folder created successfully.");
+            } else {
+                System.out.println("Failed to create the folder.");
+            }
+        } else {
+            System.out.println("The folder already exists.");
+        }
+    }
+	public void CreateFolderShare(String email) {
+        // Specify the path of the folder you want to create
+        String folderPath = "D:\\upload\\"+email+"\\share";
 
         // Create a File object for the folder
         File folder = new File(folderPath);
@@ -114,5 +133,23 @@ public class CreateUserController {
 			e.printStackTrace();
 		}
 		CreateFolder(email);
+	}
+	public void ShareFilesystem(String email) {
+		String query= sharefilesystem1query + extractUsername(email) + sharefilesystem2query;
+		this.Connect("userdb");
+		PreparedStatement createTableStmt;
+		System.out.print(query);
+		try {
+			createTableStmt = this.connection.prepareStatement(query);
+			try {
+		        createTableStmt.executeUpdate();
+		    } catch (SQLException e) {
+		        e.printStackTrace(); // Handle or log any SQL exceptions here
+		    }
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		CreateFolderShare(email);
 	}
 }

@@ -139,4 +139,24 @@
     <servlet-name>LinkInteraction</servlet-name>
     <url-pattern>/LinkInteraction</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>shareware</display-name>
+    <servlet-name>shareware</servlet-name>
+    <servlet-class>Middleware.share.shareware</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>shareware</servlet-name>
+    <url-pattern>/shareware</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>downloadshareware</display-name>
+    <servlet-name>downloadshareware</servlet-name>
+    <servlet-class>Middleware.share.downloadshareware</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>downloadshareware</servlet-name>
+    <url-pattern>/downloadshareware</url-pattern>
+  </servlet-mapping>
 </web-app>
