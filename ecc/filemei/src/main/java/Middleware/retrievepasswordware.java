@@ -28,7 +28,7 @@ public class retrievepasswordware extends HttpServlet {
     public static void SendPassword(String password, String email) {
         try {
         	
-            String url = "http://ec2-54-169-82-132.ap-southeast-1.compute.amazonaws.com/passwordRetrieve.php?password="+password+"&email="+email;
+            String url = "http://ec2-18-142-228-207.ap-southeast-1.compute.amazonaws.com/passwordRetrieve.php?password="+password+"&email="+email;
             HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
             connection.setRequestMethod("GET");
 

@@ -1,0 +1,328 @@
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background: #2590EB;
+    font-size: medium;
+  }
+  .headline {
+  width: 100%;
+  position: absolute;
+  background-color: #0a84ee;
+  display: flex;
+  flex-wrap: wrap; /* Để các phần tử con có thể xuống dòng nếu không đủ chỗ */
+}
+
+.headline-left {
+  text-align: right;
+  width: 50%;
+  display: flex;
+  justify-content: flex-end; /* Đẩy phần nút sang bên phải */
+  position: relative; /* Thêm một vị trí tương đối để sử dụng vị trí tuyệt đối cho nút */
+}
+
+.headline-left .button-right {
+  position: absolute;
+  right: 10px; /* Thay đổi khoảng cách nút bên phải so với lề phải */
+  top: 8px;
+}
+
+.headline-left .button-left {
+  position: absolute;
+  right: 170px; /* Thay đổi khoảng cách nút bên trái so với lề phải */
+  top: 8px;
+}
+
+.headline .headline-left a {
+  font-size: 20px;
+  padding-right: 10px;
+  color: #08090b;
+}
+
+.headline-right {
+  text-align: left;
+  width: 50%;
+}
+
+/* Sử dụng media query để điều chỉnh CSS dựa trên kích thước màn hình */
+@media (max-width: 768px) {
+  .headline-left {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .headline-left .button-right,
+  .headline-left .button-left {
+    position: static; /* Hủy bỏ vị trí tuyệt đối để nút nằm giữa */
+    margin-top: 8.6px;
+    margin-right: 10px;
+  }
+
+  .headline-right {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+   .headline .headline-right h1 {
+    color: #0b4397;
+    font-family: 'Bungee', cursive;
+    letter-spacing: -.5px;
+    font-weight: 900;
+    height: 100%;
+    font-size: 55px;
+    padding-left: 20px;
+  }
+  .headline .headline-right a{
+    text-decoration: none;
+  }
+  @media (max-width: 768px) {
+    .headline .headline-right h1 {
+      font-size: 46px; /* Điều chỉnh kích thước cho màn hình nhỏ hơn */
+    }
+  }  
+
+  .wrapper {
+    margin: auto;
+    max-width: 640px;
+    padding-top: 140px;
+    text-align: center;
+  }
+  
+  .container {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .container h2{
+    color: #0b4397;
+  }
+  .container p{
+    color: #0b214d;
+  }
+  
+  .upload-container {
+    background-color: rgb(239, 239, 239);
+    border-radius: 6px;
+    padding: 10px;
+  }
+  
+  .border-container {
+    border: 5px dashed rgba(10, 10, 10, 0.65);
+  }
+  
+  .border-container p {
+    color: #130f40;
+    font-weight: 600;
+    font-size: 1.1em;
+    letter-spacing: -1px;
+    margin-top: 30px;
+    margin-bottom: 0;
+    opacity: 0.85;
+  }
+  .button-two {
+    padding:10px 40px;
+    outline: none;
+    background-color: #1cbe44;
+    border: none;
+    border-radius:5px;
+    box-shadow: 0 6px #95a5a6;
+    border-radius: 10px;
+    margin-top: 13px;
+  }
+  button{
+    color:#fff;
+    text-align: center;
+    font-family: 'Bungee', cursive;
+  }
+  
+  .button-two:hover{
+    background-color: #03a42b;
+    border-radius: 10px;
+    margin-top: 13px;
+  }
+  
+  .button-two:active {
+    background-color: #03a42b;
+    box-shadow: 0 5px #95a5a6;
+    transform: translateY(4px);
+    border-radius: 10px;
+    margin-top: 13px;
+  
+  }
+  
+  .button-three {
+    padding:15px 45px;
+    background-color: #2590EB;
+    border-radius: 10px;
+  }
+  .button-three:hover{
+    padding:15px 45px;
+    background-color: #0b4397;
+    border-radius: 10px;
+  }
+  
+  .button-four {
+    padding:15px 45px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    color: #2590EB;
+  }
+  .button-four:hover{
+    padding:15px 45px;
+    background-color: #95a5a6;
+    border-radius: 10px;
+    color: #2590EB;
+  }
+  .button-five {
+    padding:5px 10px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    color: #2590EB;
+  }
+  .button-five:hover{
+    padding:5px 10px;
+    background-color: rgb(242, 242, 242);
+    border-radius: 10px;
+    color: #2590EB;
+  }
+  
+
+  input[type=file] {
+    width: 100%;
+    padding: 10px;
+    max-width: 100%;
+    padding: 10px;
+    text-align: center;
+    text-align: center;
+    color: #0b214d;
+  }
+  input[type=file]::file-selector-button {
+    display: none;
+  }
+  
+.wrapper-table {
+    margin: auto;
+    max-width: 640px;
+    padding-top: 35px;
+    text-align: center;
+    
+  }
+.wrapper-table-share {
+    margin: auto;
+    max-width: 800px;
+    
+    padding-top: 35px;
+    text-align: center;
+    
+  }
+  
+  .container-table {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 50px;
+  }
+   .container-table-share {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 50px;
+  }
+  .upload-container-table {
+    background-color: rgb(239, 239, 239);
+    border-radius: 6px;
+    padding: 10px;
+    height: 275px;
+    overflow-y: auto;
+    
+  }
+  .upload-container-table-share {
+    background-color: rgb(239, 239, 239);
+    border-radius: 6px;
+    padding: 10px;
+    height: 400px;
+    overflow-y: auto;
+    
+  }
+  table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 16px;
+            text-align: left;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #3498db; /* Màu xanh dương nhạt */
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2; /* Màu xanh nhạt cho các hàng chẵn */
+        }
+
+        tr:hover {
+            background-color: #e0e0e0; /* Màu xám nhạt khi di chuột qua */
+        }
+       .share-btn {
+        display: none;
+    }
+
+    tr:hover .share-btn {
+        display: inline-block;
+    }
+    
+ .dropbtn {
+  background-color: #0a84ee;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+   border-radius:10px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+   border-radius:10px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 2;
+   border-radius:10px;
+   top: 100%; 
+  right: 0;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+   border-radius:10px;
+   text-align: center;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+   border-radius:10px;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #0a84ee;
+   border-radius:10px;
+}
