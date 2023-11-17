@@ -15,16 +15,19 @@ public class DBController {
 	}
 	public void Connect(String dbname) {
 		try {
-			url += dbname;
+			this.url += dbname;
 			Class.forName("com.mysql.cj.jdbc.Driver");
+			
 			try {
-				connection = DriverManager.getConnection(url, user, password);
-	            if(connection != null) {
+				this.connection = DriverManager.getConnection(this.url, this.user, this.password);
+	            if(this.connection != null) {
 	            	System.out.println("Success");
 	            }
 	        	} catch (SQLException ex) {
+	        		System.out.println("Failed");
 	                ex.printStackTrace();
 	        }
+	        
 		} catch (ClassNotFoundException e) {
             e.printStackTrace();
 		}

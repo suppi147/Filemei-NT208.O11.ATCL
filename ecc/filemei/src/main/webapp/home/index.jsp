@@ -8,8 +8,8 @@
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/filemei/assets/upload/upload.css" rel="stylesheet">
-    <script src="/filemei/assets/upload/upload.js"></script>
+    <link href="/filemei/assets/home/upload/upload.css" rel="stylesheet">
+    <script src="/filemei/assets/home/upload/upload.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
@@ -24,10 +24,10 @@
   </div>
   <div class="headline-left">
     <div class="button-right">
-      <button class="button-three" onclick="linkTrigger('/filemei/login')">Login</button>
+      <button class="signin-button" onclick="linkTrigger('/filemei/login')">Login</button>
     </div>
     <div class="button-left">
-      <button class="button-four" onclick="linkTrigger('/filemei/signup')">Sign Up</button>
+      <button class="signup-button" onclick="linkTrigger('/filemei/signup')">Sign Up</button>
     </div>
   </div>
 </div>
@@ -48,7 +48,7 @@
     <div class="w3-light-grey" style="visibility:hidden;">
   			<div id="myBar" class="w3-container w3-blue w3-round-xlarge" style="width:0%;">0%</div>
 	  </div>
-    <button id="submit" class="button-two" type="submit" onclick="uploadBar2();emptyAlertdanger();">Upload</button>
+    <button id="submit" class="upload-button" type="submit" onclick="PublicUploadFile();">Upload</button>
     
   </div>
 </div>

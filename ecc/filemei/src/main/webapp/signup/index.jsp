@@ -3,17 +3,19 @@
   <html lang="en">
   <head>
   <title>Filemei</title>
-  <link href="/filemei/assets/login/login.css" rel="stylesheet" />
+  <link href="/filemei/assets/signup/signup.css" rel="stylesheet" />
+  <script src="/filemei/assets/signup/signup.js"></script>
   <link rel="shortcut icon" href="/filemei/assets/filemei.ico" type="image/x-icon">
-  <script src="/filemei/assets/login/login.js"></script>
+  
   </head>
+  
   <body>
   <div class="wrapper">
 	<div class="heading">
 	<a href="http://localhost:8080/filemei/home/"><h1>Filemei</h1></a>
 	<p>Let create an filemei account</p>
 	</div>
-	<form action="/filemei/signupware" method="post" onsubmit="return check();">	
+	<form action="/filemei/signupware" method="post" onsubmit="return CheckPassIdentical();">	
 	<div class="input-group">
 	<input type="text" id="username" name="email" class="input-field" placeholder="What is your email address?" required>
 	 <input type="password" id="password" name="password" class="input-field" placeholder="Create a password" required>

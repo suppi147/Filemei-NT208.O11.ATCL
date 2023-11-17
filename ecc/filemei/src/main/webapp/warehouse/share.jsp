@@ -30,8 +30,7 @@ for(int i = 0; i < shareInteraction.getNumberofId(emailuser); i++){
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/filemei/assets/upload/upload.css" rel="stylesheet">
-    <script src="/filemei/assets/upload/upload.js"></script>
+    <link href="/filemei/assets/warehouse/share.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
