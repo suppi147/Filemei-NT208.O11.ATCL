@@ -1,7 +1,7 @@
 function linkTrigger(link){
 	window.location.href= link;	
 }
-function check() {
+function CheckPassIdentical() {
   if (document.getElementById('password').value !=
     document.getElementById('re-password').value) {
 	document.getElementById('password').value="";
