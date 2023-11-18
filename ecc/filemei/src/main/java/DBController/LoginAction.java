@@ -25,6 +25,7 @@ public class LoginAction extends DBController {
         return false;
 	}
 	public String GetPassword(String email) throws SQLException {
+		this.Connect("authdb");
 		PreparedStatement myStmt = this.connection.prepareStatement(fetchsql);
 		 myStmt.setString(1, email);
 		 ResultSet myRs= myStmt.executeQuery();
