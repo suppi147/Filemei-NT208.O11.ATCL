@@ -4,8 +4,8 @@ import java.nio.file.*;
 
 public class CopyFileShare {
 	public void share(String receiveEmail,String userEmail, String filename) {
-		Path sourcePath = Paths.get("D:\\upload\\"+userEmail+"\\"+filename);
-        Path destinationPath = Paths.get("D:\\upload\\"+receiveEmail+"\\share\\");
+		Path sourcePath = Paths.get("/root/upload/"+userEmail+"/"+filename);
+        Path destinationPath = Paths.get("/root/upload/"+receiveEmail+"/share/");
 
         try {
         	Files.createDirectories(destinationPath);

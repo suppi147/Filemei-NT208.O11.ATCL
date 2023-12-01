@@ -22,7 +22,7 @@ public class CreateUserController {
 	public CreateUserController() {
 		this.url = "jdbc:mysql://127.0.0.1:3306/";
 		this.user = "root";
-		this.password = "123";
+		this.password = "";
 		this.connection = null;
 	}
 	public void Connect(String dbname) {
@@ -52,7 +52,7 @@ public class CreateUserController {
 	}
 	public void CreateFolder(String email) {
         // Specify the path of the folder you want to create
-        String folderPath = "D:\\upload\\"+email;
+        String folderPath = "/root/upload/"+email;
 
         // Create a File object for the folder
         File folder = new File(folderPath);
@@ -73,7 +73,7 @@ public class CreateUserController {
     }
 	public void CreateFolderShare(String email) {
         // Specify the path of the folder you want to create
-        String folderPath = "D:\\upload\\"+email+"\\share";
+        String folderPath = "/root/upload/"+email+"/share";
 
         // Create a File object for the folder
         File folder = new File(folderPath);

@@ -10,7 +10,7 @@ public class DBController {
 	public DBController() {
 		this.url = "jdbc:mysql://127.0.0.1:3306/";
 		this.user = "root";
-		this.password = "123";
+		this.password = "";
 		this.connection = null;
 	}
 	public void Connect(String dbname) {

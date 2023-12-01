@@ -79,7 +79,7 @@ public class UserUpload extends HttpServlet {
 	  public File getFolderUpload() {
 		  CreateUserController getEmail = new CreateUserController();
 		  String email = getEmail.GetEmailOfCookie(cookieFinal);
-		File folderUpload = new File("D:\\upload\\"+email+"\\");
+		File folderUpload = new File("/root/upload/"+email+"/");
 		if (!folderUpload.exists()) {
 		  folderUpload.mkdirs();
 		  

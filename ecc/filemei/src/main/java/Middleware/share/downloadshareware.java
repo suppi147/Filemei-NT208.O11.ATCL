@@ -45,7 +45,7 @@ public class downloadshareware extends HttpServlet {
 		        response.sendRedirect("http://localhost:8080/filemei/login/");
 			}
 			else {
-				File downloadFile = new File("D:\\upload\\"+email+"\\share\\"+filePath);
+				File downloadFile = new File("/root/upload/"+email+"/share/"+filePath);
 				FileInputStream inStream = new FileInputStream(downloadFile);
 				
 				// if you want to use a relative path to context root:

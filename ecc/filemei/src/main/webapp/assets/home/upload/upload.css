@@ -1,9 +1,9 @@
   .headline {
-  width: 100%;
-  position: absolute;
+  width: 100%;/*chiều rộng phần tử vừa hết độ dài của trình duyệt*/
+  position: absolute;/*thay đổi vị trí đặt cảu phần tử*/
   background-color: #0a84ee;
-  display: flex;
-  flex-wrap: wrap; /* Để các phần tử con có thể xuống dòng nếu không đủ chỗ */
+  display: flex;/*để cho các button đều nằm trong phần tử*/
+  flex-wrap: wrap;/*để cho các button không bị tràn ra ngoài khỏi phần tử*/
 }
 
 .headline-left {

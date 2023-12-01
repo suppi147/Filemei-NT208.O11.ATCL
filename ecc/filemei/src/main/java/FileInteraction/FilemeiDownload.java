@@ -21,7 +21,7 @@ public class FilemeiDownload extends HttpServlet {
 
         String filePath = request.getParameter("filename");
 		if(!filePath.isEmpty()){
-			File downloadFile = new File("D:\\upload\\"+filePath);
+			File downloadFile = new File("/root/upload/"+filePath);
 			FileInputStream inStream = new FileInputStream(downloadFile);
 			
 			// if you want to use a relative path to context root:

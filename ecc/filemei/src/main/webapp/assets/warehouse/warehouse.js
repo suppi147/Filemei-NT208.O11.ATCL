@@ -10,7 +10,7 @@ function UserFileUpload() {
   xhr.open('POST', 'http://localhost:8080/filemei/UserUpload', true);
 
   var width = 0;
-  elem.style.visibility = "visible"
+  elem.style.visibility = "visible";
 
   xhr.upload.onprogress = function (e) {
     if (e.lengthComputable && width <= 100) {
@@ -69,7 +69,6 @@ function shareLink(link, email) {
   .then(response => response.json())
   .then(data => {
     console.log('Success:', data);
-    alert('Share successful!');
   })
   .catch((error) => {
     console.error('Error:', error);

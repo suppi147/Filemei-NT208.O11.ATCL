@@ -1,16 +1,14 @@
 function linkTrigger(link){
-	window.location.href= link;	
+	window.location.href= link;
 }
 
 function PublicUploadFile(){
-  	
 	const fileInput = document.getElementById('fileToUpload');
     const elem = document.getElementById('myBar');
 
 
       const file = fileInput.files[0];
-      //if(fileInput.files.length === 0){
-		  const formData = new FormData();
+      const formData = new FormData();
       formData.append('file', file);
 
       const xhr = new XMLHttpRequest();
@@ -18,7 +16,7 @@ function PublicUploadFile(){
   	  if (xhr.readyState === 4 && xhr.status === 200) {
     	window.location.href = '/filemei/FilemeiUpload?filename=' + file.name;
   	   }
-};
+	  };
       xhr.open('POST', 'http://localhost:8080/filemei/FilemeiUpload', true);
 	  var width = 0;
 	  elem.style.visibility = "visible"
