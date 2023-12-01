@@ -14,10 +14,10 @@ function PublicUploadFile(){
       const xhr = new XMLHttpRequest();
 	  xhr.onreadystatechange = function() {
   	  if (xhr.readyState === 4 && xhr.status === 200) {
-    	window.location.href = '/filemei/FilemeiUpload?filename=' + file.name;
+    	window.location.href = '/filemei-1/FilemeiUpload?filename=' + file.name;
   	   }
 	  };
-      xhr.open('POST', 'http://localhost:8080/filemei/FilemeiUpload', true);
+      xhr.open('POST', 'http://ec2-52-221-209-106.ap-southeast-1.compute.amazonaws.com/filemei-1/FilemeiUpload', true);
 	  var width = 0;
 	  elem.style.visibility = "visible"
       xhr.upload.onprogress = function (e) {
