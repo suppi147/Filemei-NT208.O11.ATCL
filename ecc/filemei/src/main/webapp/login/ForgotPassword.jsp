@@ -10,7 +10,7 @@
   <body>
   <div class="wrapper">
 	<div class="heading">
-	<a href="http://localhost:8080/filemei/home/"><h1>Filemei</h1></a>
+	<a href="http://ec2-52-221-209-106.ap-southeast-1.compute.amazonaws.com/filemei/home/"><h1>Filemei</h1></a>
 	<p>Please enter your email to retrieve your password</p>
 	</div>
 	<form action="/filemei/retrievepasswordware" method="post">

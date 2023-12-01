@@ -13,18 +13,18 @@ if(userName != null) response.sendRedirect("/filemei/warehouse/");
   <html lang="en">
   <head>
 	<title>Filemei</title>
-  <link href="/filemei-1/assets/login/login.css" rel="stylesheet" />
-  <link rel="shortcut icon" href="/filemei-1/assets/filemei.ico" type="image/x-icon">
-   <script src="/filemei-1/assets/login/login.js"></script>
+  <link href="/filemei/assets/login/login.css" rel="stylesheet" />
+  <link rel="shortcut icon" href="/filemei/assets/filemei.ico" type="image/x-icon">
+   <script src="/filemei/assets/login/login.js"></script>
   
   </head>
   <body>
   <div class="wrapper">
 	<div class="heading">
-	<a href="http://ec2-52-221-209-106.ap-southeast-1.compute.amazonaws.com/filemei-1/home/"><h1>Filemei</h1></a>
+	<a href="http://ec2-52-221-209-106.ap-southeast-1.compute.amazonaws.com/filemei/home/"><h1>Filemei</h1></a>
 	<p>Sign In to your account</p>
 	</div>
-	<form action="/filemei-1/loginware" method="post">
+	<form action="/filemei/loginware" method="post">
 	<div class="input-group">
 	 <input type="text" id="username" name="email" class="input-field" placeholder="Email" required>
 	</div>
@@ -41,7 +41,7 @@ if(userName != null) response.sendRedirect("/filemei/warehouse/");
 	 </div>
 	 
 	 <div class="row">
-	    <a href="/filemei-1/login/ForgotPassword.jsp">Forgot password?</a> 
+	    <a href="/filemei/login/ForgotPassword.jsp">Forgot password?</a> 
 	 </div>
 	</div>
 	
@@ -51,7 +51,7 @@ if(userName != null) response.sendRedirect("/filemei/warehouse/");
 	</div>
 	</form>
 	<div class="signup">
-	<p>Don't have an account? <a href="/filemei-1/signup">Sign up.</a></p>
+	<p>Don't have an account? <a href="/filemei/signup">Sign up.</a></p>
 	</div>
 	</div>  
   </body>

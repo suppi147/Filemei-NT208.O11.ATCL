@@ -33,14 +33,14 @@
 </div>
 <div class="wrapper">
   <div class="container">
-    <a href="http://localhost:8080/filemei/home/">
+    <a href="http://ec2-52-221-209-106.ap-southeast-1.compute.amazonaws.com/filemei/home/">
       <h2>Super simple file sharing!</h2>
     </a>
     <p>You can share this link with your friends, so they can download it too&#9989;</p>
     <div>
        <!-- The text field -->
        <div class="copy-text">    
-        <input disabled="disabled" type="text" class="textbox" value="http://localhost:8080/filemei/FilemeiDownload?filename=${requestScope.filename}" id="myInput">
+        <input disabled="disabled" type="text" class="textbox" value="http://ec2-52-221-209-106.ap-southeast-1.compute.amazonaws.com/filemei/FilemeiDownload?filename=${requestScope.filename}" id="myInput">
         <button onclick="copy()" ><i class="fa fa-clone" ></i></button>
       </div>
     </div>

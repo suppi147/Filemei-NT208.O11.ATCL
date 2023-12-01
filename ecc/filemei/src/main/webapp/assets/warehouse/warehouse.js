@@ -26,7 +26,7 @@ function UserFileUpload() {
     // Check if the upload was successful (you may need to adjust the condition based on your server's response)
     if (xhr.status >= 200 && xhr.status < 300) {
       // Redirect after successful upload
-      window.location.href = "http://localhost:8080/filemei/warehouse/";
+      window.location.href = "http://ec2-52-221-209-106.ap-southeast-1.compute.amazonaws.com/filemei/warehouse/";
     } else {
       // Handle error cases if needed
       console.error('File upload failed:', xhr.statusText);
@@ -60,7 +60,7 @@ function shareLink(link, email) {
   url.searchParams.append('filename', filename);
   url.searchParams.append('userEmail', email);
 
-  fetch('http://localhost:8080/filemei/shareware?' + url.searchParams.toString(), {
+  fetch('http://ec2-52-221-209-106.ap-southeast-1.compute.amazonaws.com/filemei/shareware?' + url.searchParams.toString(), {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
