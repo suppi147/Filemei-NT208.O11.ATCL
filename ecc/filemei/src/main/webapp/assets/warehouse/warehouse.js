@@ -7,7 +7,7 @@ function UserFileUpload() {
   formData.append('file', file);
 
   const xhr = new XMLHttpRequest();
-  xhr.open('POST', 'http://ec2-52-221-209-106.ap-southeast-1.compute.amazonaws.com/filemei-1/UserUpload', true);
+  xhr.open('POST', 'http://ec2-52-221-209-106.ap-southeast-1.compute.amazonaws.com/filemei/UserUpload', true);
 
   var width = 0;
   elem.style.visibility = "visible";
