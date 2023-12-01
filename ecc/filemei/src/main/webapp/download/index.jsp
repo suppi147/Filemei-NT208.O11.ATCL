@@ -20,7 +20,7 @@
 <body>
 <div class="headline">
   <div class="headline-right">
-    <a href="http://localhost:8080/filemei/home/"><h1>filemei</h1></a>
+    <a href="http://ec2-54-251-199-76.ap-southeast-1.compute.amazonaws.com/filemei/home/"><h1>filemei</h1></a>
   </div>
   <div class="headline-left">
     <div class="button-right">
@@ -33,14 +33,14 @@
 </div>
 <div class="wrapper">
   <div class="container">
-    <a href="http://ec2-52-221-209-106.ap-southeast-1.compute.amazonaws.com/filemei/home/">
+    <a href="http://ec2-54-251-199-76.ap-southeast-1.compute.amazonaws.com/filemei/home/">
       <h2>Super simple file sharing!</h2>
     </a>
     <p>You can share this link with your friends, so they can download it too&#9989;</p>
     <div>
        <!-- The text field -->
        <div class="copy-text">    
-        <input disabled="disabled" type="text" class="textbox" value="http://ec2-52-221-209-106.ap-southeast-1.compute.amazonaws.com/filemei/FilemeiDownload?filename=${requestScope.filename}" id="myInput">
+        <input disabled="disabled" type="text" class="textbox" value="http://ec2-54-251-199-76.ap-southeast-1.compute.amazonaws.com/filemei/FilemeiDownload?filename=${requestScope.filename}" id="myInput">
         <button onclick="copy()" ><i class="fa fa-clone" ></i></button>
       </div>
     </div>

@@ -17,7 +17,7 @@ function PublicUploadFile(){
     	window.location.href = '/filemei/FilemeiUpload?filename=' + file.name;
   	   }
 	  };
-      xhr.open('POST', 'http://ec2-52-221-209-106.ap-southeast-1.compute.amazonaws.com/filemei/FilemeiUpload', true);
+      xhr.open('POST', 'http://ec2-54-251-199-76.ap-southeast-1.compute.amazonaws.com/filemei/FilemeiUpload', true);
 	  var width = 0;
 	  elem.style.visibility = "visible"
       xhr.upload.onprogress = function (e) {

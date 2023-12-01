@@ -45,9 +45,9 @@ for(int i = 0; i < linkInteraction.getNumberofId(emailuser); i++){
   <div class="dropdown">
   <button class="dropbtn">Hi, <%= emailuser %></button>
   <div class="dropdown-content">
-  <a href="http://ec2-52-221-209-106.ap-southeast-1.compute.amazonaws.com/filemei/warehouse/">Warehouse</a>
-  <a href="http://ec2-52-221-209-106.ap-southeast-1.compute.amazonaws.com/filemei/warehouse/share.jsp">Share</a>
-  <a href="http://ec2-52-221-209-106.ap-southeast-1.compute.amazonaws.com/filemei/logoutware">Sign out</a>
+  <a href="http://ec2-54-251-199-76.ap-southeast-1.compute.amazonaws.com/filemei/warehouse/">Warehouse</a>
+  <a href="http://ec2-54-251-199-76.ap-southeast-1.compute.amazonaws.com/filemei/warehouse/share.jsp">Share</a>
+  <a href="http://ec2-54-251-199-76.ap-southeast-1.compute.amazonaws.com/filemei/logoutware">Sign out</a>
   </div>
 </div>
 </div>

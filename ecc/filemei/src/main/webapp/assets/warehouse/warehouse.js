@@ -60,7 +60,7 @@ function shareLink(link, email) {
   url.searchParams.append('filename', filename);
   url.searchParams.append('userEmail', email);
 
-  fetch('http://ec2-52-221-209-106.ap-southeast-1.compute.amazonaws.com/filemei/shareware?' + url.searchParams.toString(), {
+  fetch('http://ec2-54-251-199-76.ap-southeast-1.compute.amazonaws.com/filemei/shareware?' + url.searchParams.toString(), {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
